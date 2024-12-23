@@ -1,7 +1,7 @@
-export default function Home() {
+export default function Contact() {
   return (
     <div className="h-screen flex items-center justify-center text-2xl">
-      Home page
+      Contact page
     </div>
   );
 }
