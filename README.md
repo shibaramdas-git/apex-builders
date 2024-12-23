@@ -38,5 +38,8 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 live design link
 https://wp.magnium-themes.com/thebuilt/thebuilt-1/
 
+live design link - constra best ref.
+https://demo.themefisher.com/constra-bootstrap/index.html
+
 other design figma link
 https://www.figma.com/design/MvlwsUyuhYi6cYuMWiKtPS/Web-Design-for-Construction-Company-(Community)?node-id=0-1&p=f&t=ScMsiO88RRjhTpqv-0

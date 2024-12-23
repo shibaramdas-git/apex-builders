@@ -1,7 +1,14 @@
-export default function Home() {
+import Banner from "@/components/Banner";
+
+export default function Services() {
   return (
-    <div className="h-screen flex items-center justify-center text-2xl">
+    <section className="">
+      <Banner
+        heading="Services"
+        breadScrumb="hombe / bla / bla / bla"
+        bgImageSrc="/buildings/photodune-3979102-superb-backyard-m-1024x754.jpg"
+      />
       Services listing page
-    </div>
+    </section>
   );
 }
