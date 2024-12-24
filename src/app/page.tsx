@@ -1,7 +1,11 @@
+import HeroSection from "@/components/HeroSection";
+
 export default function Home() {
   return (
-    <div className="h-screen flex items-center justify-center text-2xl">
-      Home page
-    </div>
+    <main className="">
+      <div>
+        <HeroSection />
+      </div>
+    </main>
   );
 }
