@@ -5,7 +5,7 @@ export default function Services() {
     <section className="">
       <Banner
         heading="Services"
-        breadScrumb="hombe / bla / bla / bla"
+        path="/services"
         bgImageSrc="/buildings/photodune-3979102-superb-backyard-m-1024x754.jpg"
       />
       Services listing page

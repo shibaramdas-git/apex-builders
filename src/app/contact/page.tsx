@@ -1,7 +1,14 @@
-export default function Contact() {
+import Banner from "@/components/Banner";
+
+export default function ContactPage() {
   return (
-    <div className="h-screen flex items-center justify-center text-2xl">
-      Contact page
-    </div>
+    <section className="">
+      <Banner
+        heading="Contact US"
+        path={"/contact"}
+        bgImageSrc="/buildings/photodune-3979102-superb-backyard-m-1024x754.jpg"
+      />
+      P A G E
+    </section>
   );
 }

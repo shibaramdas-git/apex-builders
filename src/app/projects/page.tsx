@@ -1,7 +1,14 @@
-export default function Home() {
+import Banner from "@/components/Banner";
+
+export default function ProjectsPage() {
   return (
-    <div className="h-screen flex items-center justify-center text-2xl">
-      News listing page
-    </div>
+    <section className="">
+      <Banner
+        heading="Projects"
+        path={"/projects"}
+        bgImageSrc="/buildings/photodune-3979102-superb-backyard-m-1024x754.jpg"
+      />
+      P A G E
+    </section>
   );
 }
