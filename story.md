@@ -1,5 +1,6 @@
 ### Work flow -
 
+- npm -y create sanity@latest
 - Separating Layouts for client and studio pages.
 
 ### Desing inspirations
