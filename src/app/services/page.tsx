@@ -8,7 +8,7 @@ export default function Services() {
         path="/services"
         bgImageSrc="/buildings/photodune-3979102-superb-backyard-m-1024x754.jpg"
       />
-      Services listing page
+      Services listing page. No pages inside, no slugs for now.
     </section>
   );
 }
