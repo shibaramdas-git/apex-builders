@@ -34,12 +34,3 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-
-live design link
-https://wp.magnium-themes.com/thebuilt/thebuilt-1/
-
-live design link - constra best ref.
-https://demo.themefisher.com/constra-bootstrap/index.html
-
-other design figma link
-https://www.figma.com/design/MvlwsUyuhYi6cYuMWiKtPS/Web-Design-for-Construction-Company-(Community)?node-id=0-1&p=f&t=ScMsiO88RRjhTpqv-0
