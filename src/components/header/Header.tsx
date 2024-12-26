@@ -28,7 +28,13 @@ export default function Header() {
           </Link>
         </div>
       </div>
-      <div className="h-40 bg-[#ffb600]"> dfdf</div>
+      <div className=" bg-[#ffb600] flex gap-2 justify-center">
+        <Link href="/">Home</Link>
+        <Link href="/projects">Projects</Link>
+        <Link href="/services">Services</Link>
+        <Link href="/news">News</Link>
+        <Link href="/studio">Studio</Link>
+      </div>
     </header>
   );
 }
