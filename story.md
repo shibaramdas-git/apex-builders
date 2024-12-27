@@ -1,7 +1,7 @@
 ### Work flow -
 
 - npm -y create sanity@latest
-- Separating Layouts for client and studio pages.
+- Separating Layouts for (main contains header, footer) and overall .
 
 ### Desing inspirations
 
