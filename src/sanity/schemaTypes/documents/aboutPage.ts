@@ -1,14 +1,15 @@
 import { defineType, defineField } from "sanity";
 
 export default defineType({
-  name: "aboutPage",
-  title: "About Page",
+  name: "dynamicPage",
+  title: "New Page",
   type: "document",
   fields: [
     defineField({
       name: "title",
       type: "string",
       title: "Page Title",
+      placeholder: "Enter page name here",
     }),
     defineField({
       name: "slug",
@@ -24,10 +25,11 @@ export default defineType({
       type: "array",
       title: "Page Content",
       of: [
-        { type: "hero" }, // Hero block
-        { type: "richText" }, // Rich text block
-        { type: "gallery" }, // Gallery block
-        { type: "cta" }, // Call-to-action block
+        { type: "hero-1" },
+        { type: "richText" },
+        { type: "gallery" },
+        { type: "cta-1" },
+        { type: "faqs" },
       ],
     }),
   ],
