@@ -2,7 +2,7 @@ import { defineType, defineField } from "sanity";
 
 export default defineType({
   name: "gallery",
-  title: "Gallery Block",
+  title: "Gallery of images",
   type: "object",
   fields: [
     defineField({
