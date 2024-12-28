@@ -1,11 +1,16 @@
 import Faqs from "@/components/Faqs";
-import HeroSection from "@/components/HeroSection";
+import Hero from "@/components/Hero";
 
 export default function Home() {
   return (
     <main className="">
       <div>
-        <HeroSection />
+        <Hero
+          backgroundImage="https://via.placeholder.com/640x480.png"
+          title="Welcome to Our Website"
+          subtitle="Discover amazing content and experiences tailored just for you."
+          slug="/contact"
+        />
         <Faqs heading={faqdata.heading} items={faqdata.faqs} />
       </div>
     </main>
