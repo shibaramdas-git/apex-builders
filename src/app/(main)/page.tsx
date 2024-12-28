@@ -1,6 +1,7 @@
 import CallToAction from "@/components/Cta";
 import Faqs from "@/components/Faqs";
 import Hero from "@/components/Hero";
+import RichTextRenderer from "@/components/RichText";
 
 export default function Home() {
   return (
@@ -21,6 +22,8 @@ export default function Home() {
           image="https://via.placeholder.com/400x400.png/ebdcd2/b5b5b5"
           slug="/quote"
         />
+
+        <RichTextRenderer content={richtextdata.content} />
       </div>
     </main>
   );
@@ -45,6 +48,61 @@ const faqdata = {
       title: "How can I track my order?",
       content:
         "Once your order is shipped, you will receive a tracking number.",
+    },
+  ],
+};
+
+const richtextdata = {
+  _type: "richText",
+  content: [
+    {
+      _type: "block",
+      style: "h2",
+      children: [
+        {
+          _type: "span",
+          text: "Welcome to Our Website",
+          marks: [],
+        },
+      ],
+    },
+    {
+      _type: "block",
+      style: "normal",
+      children: [
+        {
+          _type: "span",
+          text: "This is an introductory paragraph that provides an overview of the content on this page.",
+          marks: [],
+        },
+      ],
+    },
+    {
+      _type: "block",
+      style: "normal",
+      children: [
+        {
+          _type: "span",
+          text: "Here is an important keyword, ",
+          marks: [],
+        },
+        {
+          _type: "span",
+          text: "highlighted for emphasis.",
+          marks: ["strong"],
+        },
+      ],
+    },
+    {
+      _type: "block",
+      style: "blockquote",
+      children: [
+        {
+          _type: "span",
+          text: "This is a blockquote to emphasize a particular point.",
+          marks: [],
+        },
+      ],
     },
   ],
 };
