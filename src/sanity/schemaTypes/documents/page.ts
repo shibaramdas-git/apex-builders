@@ -1,5 +1,4 @@
 import { defineType, defineField } from "sanity";
-
 export default defineType({
   name: "page",
   title: "Page",
@@ -15,6 +14,7 @@ export default defineType({
       type: "string",
       group: "content",
     }),
+
     defineField({
       name: "slug",
       type: "slug",
@@ -35,7 +35,7 @@ export default defineType({
         { type: "richText" },
         { type: "gallery" },
         { type: "cta-1" },
-        { type: "faqs" },
+        { type: "faqsSection" },
       ],
     }),
     defineField({
