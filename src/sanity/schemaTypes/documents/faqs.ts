@@ -6,16 +6,17 @@ export default defineType({
   title: "FAQs section",
   fields: [
     defineField({
-      name: "title",
+      name: "heading",
       type: "string",
-      title: "Section Title",
-      description: "Title for the FAQ section",
-      validation: (rule) => rule.required(),
+      title: "Section Heading",
+      description: "Heading for the FAQ section",
+      validation: (rule) => rule.required().error("Required"),
     }),
     defineField({
       type: "array",
       name: "faqs",
       title: "Faqs",
+      validation: (rule) => rule.min(1).error("Add at least one FAQ."),
       of: [
         {
           type: "object",
