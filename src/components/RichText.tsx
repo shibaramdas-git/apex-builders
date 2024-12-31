@@ -11,7 +11,7 @@ interface RichTextProps {
   content: RichTextBlock[];
 }
 
-const RichTextRenderer: React.FC<RichTextProps> = ({ content }) => {
+const RichText: React.FC<RichTextProps> = ({ content }) => {
   const renderBlock = (block: RichTextBlock) => {
     const { style, children } = block;
 
@@ -57,4 +57,4 @@ const RichTextRenderer: React.FC<RichTextProps> = ({ content }) => {
   );
 };
 
-export default RichTextRenderer;
+export default RichText;

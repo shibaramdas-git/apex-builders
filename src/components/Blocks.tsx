@@ -1,5 +1,7 @@
 import Hero from "./Hero";
 import Faqs from "./Faqs";
+import Cta from "./Cta";
+import RichText from "./RichText";
 
 export interface Block<T = string> {
   _type: T;
@@ -29,9 +31,21 @@ function RenderComponent(blocks) {
             );
           case "faqsSection":
             return <Faqs heading={block.title} items={block.faqs} />;
-        }
+          case "cta-1":
+            return (
+              <Cta
+                title={block.title}
+                description={block.description}
+                slug={block.slug}
+                image={block.image}
+              />
+            );
+          case "richText":
+            return <RichText content={block.content} />;
 
-        return <div>{block._type}</div>;
+          default:
+            return <div>{block._type}</div>;
+        }
       })}
     </div>
   );

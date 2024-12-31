@@ -13,7 +13,7 @@ async function fetchData() {
 
 export default async function Home() {
   const response = await fetchData();
-  const page = response[0]; //To get first page temporarily, untill slug is added in fetch.
+  const page = response[1]; //To get first page temporarily, untill slug is added in fetch.
 
   return <Blocks blocks={page?.blocks} />;
 
