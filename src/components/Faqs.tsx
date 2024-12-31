@@ -2,9 +2,9 @@
 import React, { useState } from "react";
 
 interface AccordionItem {
-  id: number;
-  title: string;
-  content: string;
+  _key: string;
+  question: string;
+  answer: string;
 }
 
 interface AccordionProps {
@@ -13,10 +13,10 @@ interface AccordionProps {
 }
 
 const Accordion: React.FC<AccordionProps> = ({ items, heading }) => {
-  const [activeId, setActiveId] = useState<number | null>(null);
+  const [activeId, setActiveId] = useState<string | null>(null);
 
-  const handleToggle = (id: number) => {
-    setActiveId((prevId) => (prevId === id ? null : id)); // Toggle logic
+  const handleToggle = (_key: string) => {
+    setActiveId((prevId) => (prevId === _key ? null : _key)); // Toggle logic
   };
 
   return (
@@ -24,16 +24,18 @@ const Accordion: React.FC<AccordionProps> = ({ items, heading }) => {
       <div className="w-full max-w-xl mx-auto">
         <h4 className="text-center text-xl font-bold">{heading}</h4>
         {items.map((item) => (
-          <div key={item.id} className="border-b border-gray-300">
+          <div key={item._key} className="border-b border-gray-300">
             {/* Accordion Header */}
             <button
-              onClick={() => handleToggle(item.id)}
+              onClick={() => handleToggle(item._key)}
               className="w-full flex justify-between items-center p-4 text-left bg-gray-100 hover:bg-gray-200 transition"
             >
-              <span className="font-semibold text-gray-800">{item.title}</span>
+              <span className="font-semibold text-gray-800">
+                {item.question}
+              </span>
               <span
                 className={`transform transition-transform duration-300 ${
-                  activeId === item.id ? "rotate-180" : "rotate-0"
+                  activeId === item._key ? "rotate-180" : "rotate-0"
                 }`}
               >
                 ▼
@@ -41,9 +43,9 @@ const Accordion: React.FC<AccordionProps> = ({ items, heading }) => {
             </button>
 
             {/* Accordion Content */}
-            {activeId === item.id && (
+            {activeId === item._key && (
               <div className="p-4 bg-white text-gray-700">
-                <p>{item.content}</p>
+                <p>{item.answer}</p>
               </div>
             )}
           </div>
