@@ -15,6 +15,8 @@ const RichTextRenderer: React.FC<RichTextProps> = ({ content }) => {
   const renderBlock = (block: RichTextBlock) => {
     const { style, children } = block;
 
+    // console.log(content);
+
     const renderChildren = () =>
       children.map((child, index) => {
         let formattedText: React.ReactNode = child.text;

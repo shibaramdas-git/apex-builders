@@ -2,8 +2,17 @@ import CallToAction from "@/components/Cta";
 import Faqs from "@/components/Faqs";
 import Hero from "@/components/Hero";
 import RichTextRenderer from "@/components/RichText";
+import { client } from "@/sanity/lib/client";
+import { PAGE_QUERY } from "@/sanity/queries/page";
 
-export default function Home() {
+async function fetchData() {
+  const data = await client.fetch(PAGE_QUERY);
+  console.log(data);
+}
+
+export default async function Home() {
+  const pageData = await fetchData();
+
   return (
     <main className="">
       <div>
