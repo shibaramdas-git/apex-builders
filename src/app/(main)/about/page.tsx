@@ -1,6 +1,15 @@
 import Banner from "@/components/Banner";
+import Blocks from "@/components/Blocks";
+import fetchSanityPageBySlug from "../actions";
+import Custom404 from "@/components/Custom404";
 
-export default function AboutPage() {
+export default async function AboutPage() {
+  const page = await fetchSanityPageBySlug({ slug: "about" });
+
+  if (!page) {
+    return <Custom404 />;
+  }
+
   return (
     <section className="">
       <Banner
@@ -8,7 +17,7 @@ export default function AboutPage() {
         path={"/about"}
         bgImageSrc="/buildings/photodune-3979102-superb-backyard-m-1024x754.jpg"
       />
-      P A G E
+      <Blocks blocks={page?.blocks} />;
     </section>
   );
 }

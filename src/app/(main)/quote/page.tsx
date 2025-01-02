@@ -1,14 +1,13 @@
-import Banner from "@/components/Banner";
+import Blocks from "@/components/Blocks";
+import fetchSanityPageBySlug from "../actions";
+import Custom404 from "@/components/Custom404";
 
-export default function QuotePage() {
-  return (
-    <section className="">
-      <Banner
-        heading="Get a quote"
-        path={"/quote"}
-        bgImageSrc="/buildings/photodune-3979102-superb-backyard-m-1024x754.jpg"
-      />
-      P A G E
-    </section>
-  );
+export default async function QuotePage() {
+  const page = await fetchSanityPageBySlug({ slug: "quote" });
+
+  if (!page) {
+    return <Custom404 />;
+  }
+
+  return <Blocks blocks={page?.blocks} />;
 }
