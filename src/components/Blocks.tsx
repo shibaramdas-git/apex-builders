@@ -11,7 +11,7 @@ export interface Block<T = string> {
 export type BlocksProps = Block[];
 
 export default function Blocks({ blocks }: { blocks: BlocksProps }) {
-  console.log(blocks);
+  // console.log(blocks);
   return <div>{RenderComponent(blocks)}</div>;
 }
 

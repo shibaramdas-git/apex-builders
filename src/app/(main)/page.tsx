@@ -5,15 +5,10 @@ import Hero from "@/components/Hero";
 import RichTextRenderer from "@/components/RichText";
 import { client } from "@/sanity/lib/client";
 import { PAGE_QUERY } from "@/sanity/queries/page";
-
-async function fetchData() {
-  const data = await client.fetch(PAGE_QUERY);
-  return data;
-}
+import fetchSanityPageBySlug from "./actions";
 
 export default async function Home() {
-  const response = await fetchData();
-  const page = response[1]; //To get first page temporarily, untill slug is added in fetch.
+  const page = await fetchSanityPageBySlug({ slug: "index" });
 
   return <Blocks blocks={page?.blocks} />;
 
