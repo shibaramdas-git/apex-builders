@@ -13,18 +13,3 @@ https://www.figma.com/design/MvlwsUyuhYi6cYuMWiKtPS/Web-Design-for-Construction-
 
 - Embedd sanity in nextjs
   https://medium.com/@aviralj02/how-to-embed-sanity-v3-studio-inside-next-js-13-project-527a2b509dee
-
-### others
-
-implelment different designs of CTA. align,color-variant .
-df
-d
-f
-df
-d
-f
-df
-
-### The next simple thing to do now to move forward ? :::
-
-- prepare schema of blocks. and make them available to use in cms.
