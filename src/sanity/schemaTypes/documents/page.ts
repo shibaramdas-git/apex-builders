@@ -32,7 +32,7 @@ export default defineType({
       group: "content",
       of: [
         { type: "hero-1" },
-        { type: "richText" },
+        { type: "block-content" },
         { type: "gallery" },
         { type: "cta-1" },
         { type: "faqsSection" },
