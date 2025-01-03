@@ -12,5 +12,28 @@ export default defineType({
       type: "string",
       validation: (Rule) => Rule.required(),
     }),
+    defineField({
+      name: "slug",
+      title: "Slug",
+      type: "slug",
+      options: {
+        source: "title",
+      },
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
+      name: "type",
+      title: "Type",
+      type: "string",
+      description: "Type of category: Article, Project, or Both.",
+      options: {
+        list: [
+          { title: "Article", value: "article" },
+          { title: "Project", value: "project" },
+          { title: "Both", value: "both" },
+        ], // Dropdown selection
+        layout: "dropdown", // Optional: "radio" or "dropdown"
+      },
+    }),
   ],
 });

@@ -6,7 +6,19 @@ import gallery from "./blocks/gallery";
 import faqs from "./documents/faqs";
 import cta1 from "./blocks/cta/cta-1";
 import author from "./documents/author";
+import category from "./documents/category";
+import article from "./documents/article";
 
 export const schema: { types: SchemaTypeDefinition[] } = {
-  types: [page, author, hero1, richText, gallery, faqs, cta1],
+  types: [
+    page,
+    article,
+    category,
+    author,
+    hero1,
+    richText,
+    gallery,
+    faqs,
+    cta1,
+  ],
 };
