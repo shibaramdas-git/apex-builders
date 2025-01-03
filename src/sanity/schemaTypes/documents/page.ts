@@ -1,7 +1,7 @@
 import { defineType, defineField } from "sanity";
 export default defineType({
   name: "page",
-  title: "Page",
+  title: "Pages",
   type: "document",
   groups: [
     { name: "content", title: "Content" },

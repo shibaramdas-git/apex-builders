@@ -5,7 +5,8 @@ import page from "./documents/page";
 import gallery from "./blocks/gallery";
 import faqs from "./documents/faqs";
 import cta1 from "./blocks/cta/cta-1";
+import author from "./documents/author";
 
 export const schema: { types: SchemaTypeDefinition[] } = {
-  types: [page, hero1, richText, gallery, faqs, cta1],
+  types: [page, author, hero1, richText, gallery, faqs, cta1],
 };
