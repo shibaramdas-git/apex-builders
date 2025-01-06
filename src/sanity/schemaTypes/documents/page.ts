@@ -1,4 +1,4 @@
-import { defineType, defineField } from "sanity";
+import { defineType, defineField, defineArrayMember } from "sanity";
 export default defineType({
   name: "page",
   title: "Pages",
@@ -14,7 +14,6 @@ export default defineType({
       type: "string",
       group: "content",
     }),
-
     defineField({
       name: "slug",
       type: "slug",
@@ -30,9 +29,10 @@ export default defineType({
       name: "blocks",
       type: "array",
       group: "content",
+      title: "Page Blocks",
       of: [
         { type: "hero-1" },
-        { type: "block-content" },
+        { type: "richText" },
         { type: "gallery" },
         { type: "cta-1" },
         { type: "faqsSection" },

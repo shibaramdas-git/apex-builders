@@ -23,33 +23,34 @@ const Accordion: React.FC<AccordionProps> = ({ items, heading }) => {
     <section>
       <div className="w-full max-w-xl mx-auto">
         <h4 className="text-center text-xl font-bold">{heading}</h4>
-        {items.map((item) => (
-          <div key={item._key} className="border-b border-gray-300">
-            {/* Accordion Header */}
-            <button
-              onClick={() => handleToggle(item._key)}
-              className="w-full flex justify-between items-center p-4 text-left bg-gray-100 hover:bg-gray-200 transition"
-            >
-              <span className="font-semibold text-gray-800">
-                {item.question}
-              </span>
-              <span
-                className={`transform transition-transform duration-300 ${
-                  activeId === item._key ? "rotate-180" : "rotate-0"
-                }`}
+        {items &&
+          items.map((item, index) => (
+            <div key={index} className="border-b border-gray-300">
+              {/* Accordion Header */}
+              <button
+                onClick={() => handleToggle(item._key)}
+                className="w-full flex justify-between items-center p-4 text-left bg-gray-100 hover:bg-gray-200 transition"
               >
-                ▼
-              </span>
-            </button>
+                <span className="font-semibold text-gray-800">
+                  {item.question}
+                </span>
+                <span
+                  className={`transform transition-transform duration-300 ${
+                    activeId === item._key ? "rotate-180" : "rotate-0"
+                  }`}
+                >
+                  ▼
+                </span>
+              </button>
 
-            {/* Accordion Content */}
-            {activeId === item._key && (
-              <div className="p-4 bg-white text-gray-700">
-                <p>{item.answer}</p>
-              </div>
-            )}
-          </div>
-        ))}
+              {/* Accordion Content */}
+              {activeId === item._key && (
+                <div className="p-4 bg-white text-gray-700">
+                  <p>{item.answer}</p>
+                </div>
+              )}
+            </div>
+          ))}
       </div>
     </section>
   );
