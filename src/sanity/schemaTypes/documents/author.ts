@@ -82,5 +82,12 @@ export default defineType({
         }),
       ],
     }),
+    defineField({
+      name: "articles",
+      title: "Articles",
+      type: "array",
+      description: "Articles written by this author",
+      of: [{ type: "reference", to: [{ type: "article" }] }],
+    }),
   ],
 });
