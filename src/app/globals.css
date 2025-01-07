@@ -13,13 +13,40 @@
     --foreground: #ededed;
   }
 } */
-
+/*---------------------- Global styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
 /*---------------------- Helper classes */
-.c_pad {
-  @apply p-2;
+.cmn_pad {
+  padding-inline: 1rem;
+  margin-inline: auto;
+  width: 100%;
+}
+@media (min-width: 576px) {
+  .cmn_pad {
+    max-width: 540px;
+  }
+}
+@media (min-width: 768px) {
+  .cmn_pad {
+    max-width: 720px;
+  }
+}
+@media (min-width: 1024px) {
+  .cmn_pad {
+    max-width: 980px;
+  }
+}
+@media (min-width: 1280px) {
+  .cmn_pad {
+    max-width: 1140px;
+  }
 }
