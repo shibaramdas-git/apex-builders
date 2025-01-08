@@ -9,8 +9,8 @@ export default function ContactPage() {
         bgImageSrc="/buildings/photodune-3979102-superb-backyard-m-1024x754.jpg"
       />
       <div className="cmn_pad">
-        <div className="bg-bgcolor text-textcolor">
-          <h1 className="dark:text-textcolor">Contact US P A G E</h1>
+        <div className="">
+          <h1 className="">Contact US P A G E</h1>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro
             placeat quas reprehenderit quo mollitia alias ea, repellendus
@@ -20,6 +20,8 @@ export default function ContactPage() {
             corrupti fugiat tenetur doloribus quaerat laboriosam, hic dolores!
           </p>
         </div>
+
+        <div className="h-10 border border-black">Hello testing</div>
       </div>
     </section>
   );

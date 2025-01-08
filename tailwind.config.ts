@@ -15,6 +15,8 @@ export default {
         secondary: "var(--secondary-color)",
         bgcolor: "var(--bg-color)",
         textcolor: "var(--text-color)",
+        yellow: "#ffc107",
+        gray: "#6c757d",
       },
     },
   },

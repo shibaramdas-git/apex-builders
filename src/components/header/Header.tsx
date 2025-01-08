@@ -11,19 +11,17 @@ export default function Header() {
   const [theme, setTheme] = useState(
     () => localStorage.getItem("theme") || "light"
   );
-  console.log("state & local -", theme);
+
   const toggleTheme = () => {
     const html = document.documentElement;
     if (html.classList.contains("dark")) {
       html.classList.remove("dark");
       localStorage.setItem("theme", "light");
       setTheme("light");
-      // console.log(localStorage.getItem("theme"));
     } else {
       html.classList.add("dark");
       localStorage.setItem("theme", "dark");
       setTheme("dark");
-      // console.log(localStorage.getItem("theme"));
     }
   };
   useEffect(() => {
@@ -62,7 +60,7 @@ export default function Header() {
           </div>
         </div>
       </div>
-      <div className=" bg-[#ffb600]">
+      <div className=" bg-[#ffb600] text-black dark:text-red-900">
         <div className="cmn_pad flex gap-2 justify-between">
           <Link href="/">Home</Link>
           <Link href="/projects">Projects</Link>
