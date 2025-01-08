@@ -79,7 +79,7 @@ const RichText: React.FC<RichTextProps> = ({ content }) => {
   };
 
   return (
-    <div className="rich-text max-w-4xl mx-auto">
+    <div className="rich-text max-w-4xl mx-auto bg-bgcolor text-textcolor">
       {content.map((block, index) => {
         if (block._type === "block") {
           return <div key={index}>{renderBlock(block)}</div>;
