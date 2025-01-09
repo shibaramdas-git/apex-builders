@@ -25,7 +25,7 @@ export default function ContactPage() {
           Hello testing
         </div>
       </div>
-      <div className="bg-slate-300 sm:bg-blue-300 md:bg-green-300 lg:bg-red-300 xl:bg-pink-300 2xl:bg-orange-300">
+      <div className="container bg-slate-300 sm:bg-blue-300 md:bg-green-300 lg:bg-red-300 xl:bg-pink-300 2xl:bg-orange-300">
         test responsiveness
       </div>
       <h3>TYPOGRAPHY </h3>
