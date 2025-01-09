@@ -9,11 +9,15 @@ export default {
   ],
   darkMode: "selector",
   theme: {
+    screens: {
+      sm: "576px",
+      md: "768px",
+      lg: "1024px",
+      xl: "1280px",
+    },
     extend: {
       colors: {
-        primary: "var(--primary-color)",
-        secondary: "var(--secondary-color)",
-        bgcolor: "var(--bg-color)",
+        bgcolor: "var(--background-color)",
         textcolor: "var(--text-color)",
         yellow: "#ffc107",
         gray: "#6c757d",
