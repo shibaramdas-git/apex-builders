@@ -7,10 +7,12 @@ export default function MainLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <>
-      <Header />
-      <main>{children}</main>
-      <Footer />
-    </>
+    <html lang="en" suppressHydrationWarning>
+      <body className="antialiased bg-bgcolor text-textcolor">
+        <Header />
+        <main>{children}</main>
+        <Footer />
+      </body>
+    </html>
   );
 }

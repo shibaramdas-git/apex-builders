@@ -12,13 +12,16 @@
   --text-color: #000000;
   --yellow: #ffb600;
   --gray: #ebebeb;
-  --dark-gray: #252525;
+  --dark-gray: #23282d;
   --white: #ffffff;
 }
-
 .dark {
   --background-color: #000000;
   --text-color: #ffffff;
+}
+
+body {
+  min-height: 100vh;
 }
 /* Typography */
 body,
