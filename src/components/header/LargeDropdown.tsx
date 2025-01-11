@@ -5,9 +5,10 @@ import Link from "next/link";
 //     heading: string,
 //     columnOptions:
 // };
-export default function Dropdown() {
+export default function LargeDropdown() {
   return (
     <div>
+      <h5>Large dropdown</h5>
       <ul className="hidden group-hover:flex flex-col absolute top-full bg-white min-w-[200px] px-6 text-black text-xs border-t-2 border-yellow">
         <li className="">
           <Link

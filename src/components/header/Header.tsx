@@ -95,8 +95,23 @@ export default function Header() {
         </div>
       </header>
       <nav className="h-[60px] bg-dark-gray sticky top-0 z-50 flex items-center">
-        <MobileNav />
-        <DesktopNav />
+        {/* Header for desktop */}
+        <DesktopNav
+          mainMenu={["HOME", "COMPANY", "CONTACT"]}
+          className="hidden md:flex"
+        />
+        {/* Header for Mobile */}
+        <MobileNav
+          mainMenu={[
+            "HOME",
+            "COMPANY",
+            "PROJECTS",
+            "SERVICES",
+            "ARTICLES",
+            "CONTACT",
+          ]}
+          className="md:hidden"
+        />
       </nav>
     </>
   );

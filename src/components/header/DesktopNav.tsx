@@ -1,14 +1,27 @@
+import clsx from "clsx";
 import Link from "next/link";
 import { IoIosArrowDown } from "react-icons/io";
 
-export default function DesktopNav() {
+export type DesktopNavProps = {
+  mainMenu: string[];
+  className: string;
+};
+
+export default function DesktopNav(props: DesktopNavProps) {
+  const { mainMenu, className, ...others } = props;
+  // console.log(mainMenu, className);
   return (
-    <div className="hidden container md:flex justify-between w-full text-white font-mont font-semibold relative">
+    <div
+      className={clsx(
+        "container justify-between w-full text-white font-mont font-semibold relative",
+        className
+      )}
+    >
       <ul className="flex gap-5">
         <li className="py-4  hover:text-yellow">
           <Link href="/">HOME</Link>
         </li>
-        {/* Dropdown for About us */}
+        {/* Dropdown for company or about */}
         <li className="dropdown relative group py-4">
           <button className="hover:text-yellow uppercase">
             Company <IoIosArrowDown className="inline group-hover:rotate-180" />
