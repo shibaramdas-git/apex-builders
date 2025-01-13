@@ -10,9 +10,12 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import MobileNav from "./MobileNav";
 import DesktopNav from "./DesktopNav";
+import useNavigation from "@/hooks/useNavigation";
 
 export default function Header() {
   const [theme, setTheme] = useState("light");
+  const { home, company, projects, services, articles, contact } =
+    useNavigation();
 
   const toggleTheme = () => {
     const html = document.documentElement;
@@ -42,7 +45,6 @@ export default function Header() {
               <FaLocationDot className="hover:text-[#ffb600] cursor-pointer transition duration-300 ease-in-out mr-2" />
               <span>9051 Apex Builders Co., India</span>
             </div>
-
             <div className="flex items-center gap-4 hover:cursor-pointer">
               <Link href="#" target="_blank">
                 <FaFacebookF className="hover:text-[#ffb600] transition duration-300 ease-in-out" />
@@ -64,7 +66,7 @@ export default function Header() {
         </div>
         {/* Mid header */}
         <div className="container flex flex-col items-center justify-center lg:flex-row lg:justify-between gap-4 py-6">
-          <div className="font-mont text-4xl font-bold lg:w-[200px]">
+          <div className="font-mont text-4xl  text-center font-bold lg:w-[200px]">
             <span className="text-orange-400 text-3xl">//#//</span> Apex
             Builders
           </div>
@@ -97,19 +99,12 @@ export default function Header() {
       <nav className="h-[60px] bg-dark-gray sticky top-0 z-50 flex items-center">
         {/* Header for desktop */}
         <DesktopNav
-          mainMenu={["HOME", "COMPANY", "CONTACT"]}
+          mainMenu={[home, company, projects, services, articles, contact]}
           className="hidden md:flex"
         />
         {/* Header for Mobile */}
         <MobileNav
-          mainMenu={[
-            "HOME",
-            "COMPANY",
-            "PROJECTS",
-            "SERVICES",
-            "ARTICLES",
-            "CONTACT",
-          ]}
+          mainMenu={[home, company, projects, services, articles, contact]}
           className="md:hidden"
         />
       </nav>

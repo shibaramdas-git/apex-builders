@@ -1,44 +1,34 @@
+import { linksType } from "@/hooks/useNavigation";
+import clsx from "clsx";
 import Link from "next/link";
 
-// export type DropdownProps = {
-//     columns: 1 | 2,
-//     heading: string,
-//     columnOptions:
-// };
-export default function Dropdown() {
+export type DropdownProps = {
+  data: { label: string; href: string }[];
+  className?: string;
+};
+
+export default function Dropdown(props: DropdownProps) {
+  const { data, className } = props;
   return (
-    <div>
-      <ul className="hidden group-hover:flex flex-col absolute top-full bg-white min-w-[200px] px-6 text-black text-xs border-t-2 border-yellow">
-        <li className="">
+    <ul
+      className={clsx(
+        "opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto group-focus-within:opacity-100 group-focus-within:pointer-events-auto w-fit min-w-[180px] max-w-[300px] focus:ring-1 flex-col absolute top-full bg-white px-6 text-black text-xs border-t-2 border-yellow group-hover:flex group-focus-within:flex transition-opacity duration-300 shadow-2xl",
+        className
+      )}
+    >
+      {data.map((subItem, subIdx) => (
+        <li key={subIdx} className="text-nowrap">
           <Link
-            href="/about"
-            className=" block py-4 border-b border-zinc-300 hover:text-yellow "
+            href={subItem.href}
+            className={clsx(
+              "block py-4 border-b border-zinc-300 hover:text-yellow overflow-x-hidden",
+              subIdx == data.length - 1 && "border-b-0"
+            )}
           >
-            About Us
+            {subItem.label}
           </Link>
         </li>
-        <li>
-          <Link
-            href="/about/team"
-            className=" block py-4 border-b border-zinc-300 hover:text-yellow "
-          >
-            Our Team
-          </Link>
-        </li>
-        <li>
-          <Link
-            href="/about/career"
-            className=" block py-4 border-b border-zinc-300 hover:text-yellow "
-          >
-            Career
-          </Link>
-        </li>
-        <li>
-          <Link href="/about/faq" className=" block py-4 hover:text-yellow ">
-            FAQs
-          </Link>
-        </li>
-      </ul>
-    </div>
+      ))}
+    </ul>
   );
 }
