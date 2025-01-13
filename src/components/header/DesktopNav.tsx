@@ -20,7 +20,7 @@ export default function DesktopNav(props: DesktopNavProps) {
     >
       {/* Mapping all nav links */}
       {mainMenu && mainMenu.length > 0 && (
-        <ul className="flex items-center gap-10 flex-1">
+        <ul className="flex items-center gap-5 lg:gap-10 flex-1">
           {mainMenu.map((menu, idx) => (
             // all horizontal links in li
             <li
@@ -48,7 +48,7 @@ export default function DesktopNav(props: DesktopNavProps) {
         </ul>
       )}
 
-      <div className="py-4">
+      <div className="py-4 hover:text-yellow">
         <Link href="/studio">STUDIO</Link>
       </div>
     </div>
