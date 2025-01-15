@@ -29,9 +29,9 @@ export default function RootLayout({
       <body
         className={`${openSans.variable} ${montSerrat.variable} antialiased bg-bgcolor text-textcolor flex flex-col min-h-screen`}
       >
-        <Header />
+        {/* <Header /> */}
         <main className="flex-grow">{children}</main>
-        <Footer />
+        {/* <Footer /> */}
       </body>
     </html>
   );
