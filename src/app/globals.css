@@ -20,9 +20,6 @@
   --text-color: #ffffff;
 }
 
-body {
-  min-height: 100vh;
-}
 /* Typography */
 body,
 p {
