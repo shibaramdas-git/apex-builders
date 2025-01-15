@@ -88,7 +88,7 @@ export default function AboutSection() {
       <div className="bg-dark-gray">
         <div className="container py-6 md:py-14 flex flex-col sm:flex-row flex-wrap sm:justify-around gap-2">
           {aboutSectionData.statsData.map((item, index) => (
-            <div key={index} className="text-center p-4">
+            <div key={index} className="text-center p-4 w-[200px]">
               {item.icon}
               <div className="text-5xl text-white font-bold mb-2">
                 {item.value}
