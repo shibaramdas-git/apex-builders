@@ -89,9 +89,12 @@ export default function Header() {
             </div>
 
             <div className="w-[130px]">
-              <button className="bg-yellow p-[10px] text-white text-nowrap w-full hover:bg-dark-gray hover:text-yellow font-semibold">
+              <Link
+                href="/quote"
+                className="bg-yellow p-[10px] text-white text-nowrap w-full hover:bg-dark-gray hover:text-yellow font-semibold"
+              >
                 Get A Quote
-              </button>
+              </Link>
             </div>
           </div>
         </div>

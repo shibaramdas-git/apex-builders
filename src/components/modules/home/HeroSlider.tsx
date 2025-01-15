@@ -1,4 +1,3 @@
-import { Button } from "@/components/ui/button";
 import {
   Carousel,
   CarouselContent,
@@ -16,7 +15,7 @@ export default function HeroSlider() {
           {heroSliderData.length > 0 &&
             heroSliderData.map((slide, idx) => {
               return (
-                <CarouselItem key={idx} className="pl-1">
+                <CarouselItem key={idx} className="pl-0">
                   <div className="relative">
                     <div className="h-[60vh] lg:h-[90vh]">
                       <img
@@ -56,13 +55,23 @@ export default function HeroSlider() {
                     </div>
                   </div>
                 </CarouselItem>
-                //
               );
             })}
         </CarouselContent>
         <CarouselPrevious className="bg-black/50 text-white rounded-none hover:bg-yellow translate-x-16 border-none" />
         <CarouselNext className="bg-black/50 text-white rounded-none hover:bg-yellow -translate-x-16 border-none" />
       </Carousel>
+      <div className="container bg-yellow p-6 md:p-8 flex gap-4 flex-col justify-center items-center md:flex-row md:justify-between -translate-y-[40px]">
+        <p className="uppercase font-semibold text-lg text-black font-mont">
+          We understand your needs of constructions.
+        </p>
+        <Link
+          href="/quote"
+          className="bg-black px-4 py-3 text-white text-nowrap hover:bg-dark-gray hover:text-yellow font-semibold"
+        >
+          Get A Quote
+        </Link>
+      </div>
     </div>
   );
 }
