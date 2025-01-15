@@ -10,57 +10,6 @@ import Link from "next/link";
 
 export default function HeroSlider() {
   return (
-    // <div className="">
-    //   <Carousel className="">
-    //     <CarouselContent className="">
-    //       {heroSliderData &&
-    //         heroSliderData.map((slide, idx) => {
-    //           return (
-    //             <CarouselItem className="pl-1">
-    //               <div className="h-[400px] relative overflow-hidden">
-    //                 <img
-    //                   src={slide.image}
-    //                   alt="hello"
-    //                   className="w-full h-full object-cover object-center"
-    //                 />
-    //               </div>
-    //               <div className="absolute inset-0 bg-black/40"></div>
-
-    //               {/* Overlay Content */}
-    //               <div className="absolute inset-0 flex items-center justify-center text-white">
-    //                 <div className="text-center">
-    //                   <p>{slide.preheading || "20 YEARS OF EXCELLENCE IN"}</p>
-    //                   <h1 className="text-2xl font-bold">
-    //                     {slide.heading || "CONSTRUCTION INDUSTRY"}
-    //                   </h1>
-    //                   <p className="text-sm mt-2">
-    //                     {slide.description ||
-    //                       "Your subtitle or additional content."}
-    //                   </p>
-    //                   <div>
-    //                     <Link
-    //                       href={slide.button1.link}
-    //                       className="bg-yellow p-[10px] text-white text-nowrap w-full hover:bg-dark-gray hover:text-yellow font-semibold"
-    //                     >
-    //                       {slide.button1.text || "Our services"}
-    //                     </Link>
-    //                     <Link
-    //                       href={slide.button2.link}
-    //                       className="bg-yellow p-[10px] text-white text-nowrap w-full hover:bg-dark-gray hover:text-yellow font-semibold"
-    //                     >
-    //                       {slide.button2.text || "Contact now"}
-    //                     </Link>
-    //                   </div>
-    //                 </div>
-    //               </div>
-    //             </CarouselItem>
-    //           );
-    //         })}
-    //     </CarouselContent>
-    //     <CarouselPrevious className="bg-black/50 text-white rounded-none hover:bg-yellow translate-x-16 border-none" />
-    //     <CarouselNext className="bg-black/50 text-white rounded-none hover:bg-yellow -translate-x-16 border-none" />
-    //   </Carousel>
-    // </div>
     <div>
       <Carousel>
         <CarouselContent>
@@ -69,7 +18,7 @@ export default function HeroSlider() {
               return (
                 <CarouselItem key={idx} className="pl-1">
                   <div className="relative">
-                    <div className="h-[400px]">
+                    <div className="h-[60vh] lg:h-[90vh]">
                       <img
                         src={slide.image}
                         alt={slide.heading}
@@ -77,28 +26,28 @@ export default function HeroSlider() {
                       />
                     </div>
                     <div className="absolute inset-0 bg-black/40"></div>
-                    <div className="absolute inset-0 flex items-center justify-center text-white">
+                    <div className="absolute inset-0 flex items-center justify-center text-white max-w-3xl mx-auto">
                       <div className="text-center">
-                        <p className="text-white">
+                        <p className="text-white text-lg mb-2 md:mb-6 md:text-2xl">
                           {slide.preheading || "20 YEARS OF EXCELLENCE IN"}
                         </p>
-                        <h1 className="text-2xl font-bold text-white">
+                        <h1 className="text-3xl font-bold text-white lg:text-5xl mb-4">
                           {slide.heading || "CONSTRUCTION INDUSTRY"}
                         </h1>
-                        <p className="text-sm mt-2 text-white">
+                        <p className="text-sm mt-2 text-white md:text-lg mb-8">
                           {slide.description ||
                             "Your subtitle or additional content."}
                         </p>
                         <div className="mt-4 flex gap-4 justify-center">
                           <Link
                             href={slide?.button1?.link || "#"}
-                            className="bg-yellow px-4 py-2 text-white rounded-md hover:bg-dark-gray hover:text-yellow font-semibold"
+                            className="bg-yellow px-4 py-2 text-white hover:bg-dark-gray hover:text-yellow font-semibold"
                           >
                             {slide?.button1?.text || "Our Services"}
                           </Link>
                           <Link
                             href={slide?.button2?.link || "#"}
-                            className="bg-yellow px-4 py-2 text-white rounded-md hover:bg-dark-gray hover:text-yellow font-semibold"
+                            className="bg-transparent px-4 py-2 text-white hover:bg-dark-gray hover:text-yellow font-semibold border-yellow border-2 "
                           >
                             {slide?.button2?.text || "Contact Now"}
                           </Link>
