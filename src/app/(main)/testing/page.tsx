@@ -1,5 +1,6 @@
 import AboutSection from "@/components/modules/home/AboutSection";
 import HeroSlider from "@/components/modules/home/HeroSlider";
+import ProjectSection from "@/components/modules/home/ProjectSection";
 
 export default function TestPage() {
   return (
@@ -7,6 +8,7 @@ export default function TestPage() {
       {/* Home page */}
       <HeroSlider />
       <AboutSection />
+      <ProjectSection />
     </div>
   );
 }

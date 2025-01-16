@@ -46,7 +46,7 @@ export default function HeroSlider() {
                           </Link>
                           <Link
                             href={slide?.button2?.link || "#"}
-                            className="bg-transparent px-4 py-2 text-white hover:bg-dark-gray hover:text-yellow font-semibold border-yellow border-2 "
+                            className="bg-transparent px-4 py-2 text-white hover:bg-black hover:text-yellow font-semibold border-yellow border-2 "
                           >
                             {slide?.button2?.text || "Contact Now"}
                           </Link>
