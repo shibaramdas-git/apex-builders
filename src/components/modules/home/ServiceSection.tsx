@@ -16,7 +16,7 @@ export default function ServiceSection() {
           <div className="flex flex-col gap-3 border border-black">
             <div className="flex gap-3 items-center">
               <div>
-                <BsBuildings className="text-6xl text-yellow" />{" "}
+                <BsBuildings className="text-6xl text-yellow" />
               </div>
               <div>
                 <h5>

@@ -4,21 +4,24 @@ export default function ProjectSection() {
   return (
     <section>
       <div className="container py-12">
-        <h3 className="text-xl md:text-2xl font-normal mb-2 text-center">
+        <p className="text-xl md:text-2xl font-normal mb-2 text-center uppercase">
           {projectSectionData.sectionHeading || "OUR PROJECTS"}
-        </h3>
+        </p>
+        <h2 className="text-3xl lg:text-4xl mb-3 text-center">
+          {projectSectionData.heading || "Lorem ipsum dolor sit amet."}
+        </h2>
         <div className="grid gap-6 p-4 md:grid-cols-2 lg:grid-cols-3 items-center">
           {projectSectionData.projects.map((project) => (
             <div
               key={project.id}
-              className={`relative h-[300px] bg-cover bg-center bg-no-repeat shadow-md rounded-lg hover:shadow-lg transition-shadow ${
+              className={`relative h-[300px] bg-cover bg-center bg-no-repeat shadow-md rounded-md hover:shadow-lg transition-shadow overflow-hidden ${
                 project.span || ""
               }`}
             >
               <img
                 src={project.imageUrl}
                 alt="image"
-                className="object-cover"
+                className="object-cover w-full h-full absolute inset-0"
               />
               <div className="bg-black/50 absolute inset-0 h-full w-full"></div>
               <div className="flex flex-col pl-[8%] pr-3 justify-center items-start h-full w-full absolute z-50 hover:bg-black/65 hover:pl-[10%] transition-all duration-300">
@@ -47,7 +50,8 @@ export default function ProjectSection() {
 }
 
 const projectSectionData = {
-  sectionHeading: "OUR PROJECTS",
+  sectionHeading: "work of excellence",
+  heading: "OUR PROJECTS",
   projects: [
     {
       id: 1,
