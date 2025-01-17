@@ -9,19 +9,19 @@ import { FaQuoteLeft } from "react-icons/fa";
 
 export default function TestimonialSingle() {
   return (
-    <div className="w-full max-w-lg">
+    <div className="max-w-md">
       <Carousel>
-        <CarouselContent>
+        <CarouselContent className="container">
           {testimonialSingleData.length > 0 &&
             testimonialSingleData.map((slide, idx) => {
               return (
-                <CarouselItem>
-                  <div className="h-80 w-full p-2 flex items-center justify-center">
-                    <div className="flex gap-4 h-3/4">
+                <CarouselItem className="bg-red-200 p-6">
+                  <div className="h-80 flex items-center justify-center">
+                    <div className="flex h-3/4">
                       <div>
                         <FaQuoteLeft className="text-3xl text-yellow italic" />
                       </div>
-                      <div className="flex flex-col justify-between p-4">
+                      <div className="flex flex-col justify-between px-4">
                         <p>{slide.quote || "Lorem ipsum dolor sit amet."}</p>
                         <div className="flex justify-between py-2">
                           <div className="flex gap-3 items-center ">
@@ -42,16 +42,18 @@ export default function TestimonialSingle() {
                               </p>
                             </div>
                           </div>
-                          <div className="w-1/3 h-[70px] rounded-md  overflow-hidden ">
-                            <img
-                              src={
-                                slide.companyLogo ||
-                                "/logos/thebuilt-logo-2.png"
-                              }
-                              alt="company logo"
-                              className=" object-cover"
-                            />
-                          </div>
+                          {slide.companyLogo && (
+                            <div className="w-1/3 h-[70px] rounded-md  overflow-hidden ">
+                              <img
+                                src={
+                                  slide.companyLogo ||
+                                  "/logos/thebuilt-logo-2.png"
+                                }
+                                alt="company logo"
+                                className=" object-cover"
+                              />
+                            </div>
+                          )}
                         </div>
                       </div>
                     </div>
@@ -81,7 +83,6 @@ const testimonialSingleData = [
     clientImage: "https://picsum.photos/seed/person2/400/400",
     clientName: "Bob Smith",
     position: "Marketing Manager, XYZ Ltd",
-    companyLogo: "/logos/thebuilt-logo-2.png",
   },
   {
     quote:

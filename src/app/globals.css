@@ -159,3 +159,29 @@ h5 {
     @apply bg-background text-foreground;
   }
 }
+
+@keyframes moveLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes moveRight {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(50%);
+  }
+}
+
+.animate-left {
+  animation: moveLeft 15s linear infinite; /* Adjust duration as needed */
+}
+
+.animate-right {
+  animation: moveRight 15s linear infinite; /* Adjust duration as needed */
+}

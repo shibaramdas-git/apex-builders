@@ -9,11 +9,11 @@ import TestimonialSection from "@/components/modules/home/TestimonialSection";
 export default function TestPage() {
   return (
     <div className="flex flex-col">
-      {/* <HeroSlider /> */}
-      {/* <AboutSection /> */}
-      {/* <ServiceSection /> */}
-      {/* <ProjectSection /> */}
-      {/* <ArticleSection /> */}
+      <HeroSlider />
+      <AboutSection />
+      <ServiceSection />
+      <ProjectSection />
+      <ArticleSection />
       <TestimonialSection />
     </div>
   );

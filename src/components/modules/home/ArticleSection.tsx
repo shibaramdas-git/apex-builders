@@ -39,9 +39,9 @@ export default function ArticleSection() {
             RECENT ARTICLES
           </h2>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {articles.map((article) => (
-            <div key={article.id} className="p-4 md:p-2">
+            <div key={article.id} className="">
               <Link href={article.link}>
                 <div className="overflow-hidden rounded-md">
                   <img
@@ -50,7 +50,7 @@ export default function ArticleSection() {
                     className="rounded-md hover:scale-110 w-full h-full object-cover transition-transform duration-300 ease-in-out"
                   />
                 </div>
-                <p className="text-lg font-semibold text-black mt-4 mb-2 hover:text-yellow">
+                <p className="text-lg font-semibold text-black mt-4 mb-2 hover:text-yellow h-[60px] overflow-hidden">
                   {article.title}
                 </p>
                 <p className="uppercase">

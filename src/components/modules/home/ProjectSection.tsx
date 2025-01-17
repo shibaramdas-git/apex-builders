@@ -10,7 +10,7 @@ export default function ProjectSection() {
         <h2 className="text-3xl lg:text-4xl mb-3 text-center">
           {projectSectionData.heading || "Lorem ipsum dolor sit amet."}
         </h2>
-        <div className="grid gap-6 p-4 md:grid-cols-2 lg:grid-cols-3 items-center">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 items-center">
           {projectSectionData.projects.map((project) => (
             <div
               key={project.id}
@@ -24,7 +24,7 @@ export default function ProjectSection() {
                 className="object-cover w-full h-full absolute inset-0"
               />
               <div className="bg-black/50 absolute inset-0 h-full w-full"></div>
-              <div className="flex flex-col pl-[8%] pr-3 justify-center items-start h-full w-full absolute z-50 hover:bg-black/65 hover:pl-[10%] transition-all duration-300">
+              <div className="flex flex-col pl-[8%] pr-3 justify-center items-start h-full w-full absolute z-10 hover:bg-black/65 hover:pl-[10%] transition-all duration-300">
                 <span className="text-xs md:text-sm font-semibold text-white mb-2 uppercase">
                   {project.category}
                 </span>
