@@ -39,9 +39,9 @@ export default function Header() {
     <>
       <header>
         {/* Top header */}
-        <div className="top_bar bg-[#ebebeb] text-neutral-600">
+        <div className="top_bar bg-gray dark">
           <div className="container h-[75px] md:h-[40px] flex flex-col items-center justify-center gap-2 md:flex-row md:justify-between">
-            <div className="flex items-center font-normal text-[15px] text-[#555]">
+            <div className="flex items-center font-normal text-[15px] text-[#555] dark:text-slate-300">
               <FaLocationDot className="hover:text-[#ffb600] cursor-pointer transition duration-300 ease-in-out mr-2" />
               <span>9051 Apex Builders Co., India</span>
             </div>
@@ -67,8 +67,7 @@ export default function Header() {
         {/* Mid header */}
         <div className="container flex flex-col items-center justify-center lg:flex-row lg:justify-between gap-4 py-6">
           <div className="font-mont text-4xl  text-center font-bold lg:w-[200px]">
-            <span className="text-orange-400 text-3xl">//#//</span> Apex
-            Builders
+            <span className="text-yellow text-3xl">//#//</span> Apex Builders
           </div>
           <div className="flex flex-wrap items-center justify-center gap-2 max-w-[350px] md:max-w-full md:w-full lg:w-auto text-center ">
             <div className="w-[130px] md:w-[150px] md:border-e">

@@ -20,9 +20,11 @@ export default function MobileNav(props: MobileNavProps) {
         className
       )}
     >
-      <div>//#//Apex </div>
+      <p className="text-xl font-semibold text-slate-100">
+        <span className="text-yellow font-normal">//#// </span>Apex
+      </p>
       <div className="dropdown relative group py-4">
-        <button className="hover:text-yellow uppercase">
+        <button className="hover:text-yellow uppercase font-semibold">
           MENU <IoIosArrowDown className="inline group-hover:rotate-180" />
         </button>
         {/* <Dropdown /> */}

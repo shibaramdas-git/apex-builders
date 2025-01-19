@@ -7,7 +7,7 @@ export default {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-  darkMode: ["selector", "class"],
+  darkMode: ["class"],
   theme: {
     screens: {
       sm: "576px",
@@ -19,8 +19,10 @@ export default {
       colors: {
         bgcolor: "var(--background-color)",
         textcolor: "var(--text-color)",
-        yellow: "#ffc107",
-        gray: "#6c757d",
+        yellow: "var(--yellow)",
+        gray: "var(--gray)",
+        orange: "var(--orange)",
+        maroon: "var(--maroon)",
         "dark-gray": "var(--dark-gray)",
 
         // Shadcn variables ----------------

@@ -10,14 +10,17 @@
 :root {
   --background-color: #ffffff;
   --text-color: #000000;
-  --yellow: #ffb600;
+  --yellow: #ffb600; /* gold */
   --gray: #ebebeb;
-  --dark-gray: #23282d;
+  --orange: #d80114; /* fire engine red */
+  --maroon: #37000a;
+  --dark-gray: #003049; /* prussian  blue */
   --white: #ffffff;
 }
 .dark {
-  --background-color: #000000;
+  --background-color: #000000e3;
   --text-color: #ffffff;
+  --gray: blac;
 }
 
 /* Typography */

@@ -77,10 +77,10 @@ const services = {
 
 const articles = {
   label: "ARTICLES",
-  href: "/articles",
+  href: "/news",
 };
 
 const contact = {
-  label: "CONTACTS",
-  href: "/contacts",
+  label: "CONTACT US",
+  href: "/contact",
 };
