@@ -16,7 +16,7 @@ const CallToAction: React.FC<CTAProps> = ({
       {/* Image Section */}
       <div className="w-full md:w-1/2">
         <img
-          src={image}
+          src={"https://picsum.photos/800/350?random=1"}
           alt={title}
           className="w-full h-60 object-cover rounded-lg shadow-md"
         />

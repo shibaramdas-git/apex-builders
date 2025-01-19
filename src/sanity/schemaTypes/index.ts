@@ -10,6 +10,7 @@ import article from "./documents/article";
 import project from "./documents/project";
 import blockContent from "./blocks/block-content";
 import richText from "./blocks/rich-text";
+import heroSlider from "./blocks/home/hero-slider";
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
@@ -22,6 +23,7 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     // Blocks
     blockContent,
     richText,
+    heroSlider,
     hero1,
     gallery,
     faqs,

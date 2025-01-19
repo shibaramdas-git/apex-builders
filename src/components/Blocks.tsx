@@ -2,13 +2,10 @@ import Hero from "./Hero";
 import Faqs from "./Faqs";
 import Cta from "./Cta";
 import RichText from "./RichText";
+import HeroSlider from "./modules/home/HeroSlider";
 
-export interface Block<T = string> {
-  _type: T;
-  _key: string;
-  uid?: string;
-}
-export type BlocksProps = Block[];
+
+export type BlocksProps = Sanity.Block[];
 
 export default function Blocks({ blocks }: { blocks: BlocksProps }) {
   // console.log(blocks);
@@ -47,6 +44,8 @@ function RenderComponent(blocks: BlocksProps) {
               return (
                 <RichText key={`richText-${index}`} content={block.content} />
               );
+            case "heroSlider":
+              return <HeroSlider key={block._key} content={block} />;
 
             default:
               return <div>{block._type}</div>;

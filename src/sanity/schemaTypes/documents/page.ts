@@ -1,11 +1,14 @@
 import { defineType, defineField, defineArrayMember } from "sanity";
+import { IoHome } from "react-icons/io5";
+import { TbSeo } from "react-icons/tb";
 export default defineType({
   name: "page",
   title: "Pages",
   type: "document",
+  icon: IoHome,
   groups: [
     { name: "content", title: "Content" },
-    { name: "seo", title: "Seo" },
+    { name: "seo", title: "Seo", icon: TbSeo },
     { name: "settings", title: "Settings" },
   ],
   fields: [
@@ -36,6 +39,7 @@ export default defineType({
         { type: "gallery" },
         { type: "cta-1" },
         { type: "faqsSection" },
+        { type: "heroSlider" },
       ],
     }),
     defineField({
@@ -63,4 +67,10 @@ export default defineType({
       title: "Open graph image - [1200x630]",
     }),
   ],
+  preview: {
+    select: {
+      title: "title",
+      media: "ogImage",
+    },
+  },
 });
