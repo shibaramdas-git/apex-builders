@@ -11,6 +11,8 @@ import project from "./documents/project";
 import blockContent from "./blocks/block-content";
 import richText from "./blocks/rich-text";
 import heroSlider from "./blocks/home/hero-slider";
+import { seoSchema } from "./blocks/seo";
+import about1 from "./blocks/home/about-1";
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
@@ -28,5 +30,8 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     gallery,
     faqs,
     cta1,
+    about1,
+    // Objects
+    seoSchema,
   ],
 };
