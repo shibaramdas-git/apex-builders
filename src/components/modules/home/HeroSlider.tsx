@@ -6,49 +6,36 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { urlFor } from "@/sanity/lib/image";
-import { SanityImageSource } from "@sanity/image-url/lib/types/types";
+import { link } from "@/types/type";
 import Link from "next/link";
 
-export type HeroSliderProps = {
-  content: {
-    _key: string;
-    _type: string;
-    autoplay: boolean;
-    interval: number;
-    cta: {
-      text: string;
-      button: {
-        href: string;
-        label: string;
-      };
-    };
-    slides: {
-      button1?: {
-        href: string;
-        label: string;
-      };
-      button2?: {
-        href: string;
-        label: string;
-      };
-      description?: string;
-      heading: string;
-      image?: SanityImageSource;
-      preheading?: string;
-      _key?: string;
-    }[];
+export type HeroSliderProps = Sanity.Block<"heroSlider"> & {
+  autoplay: boolean;
+  interval: number;
+  cta: {
+    text: string;
+    button: link;
   };
+  slides: {
+    button1?: link;
+    button2?: link;
+    description?: string;
+    heading: string;
+    image?: Sanity.Image;
+    preheading?: string;
+    _key?: string;
+  }[];
 };
 
-export default function HeroSlider({ content }: HeroSliderProps) {
-  const heroSliderData = content;
-  console.log(content);
+export default function HeroSlider(props: HeroSliderProps) {
+  const { autoplay, interval, slides, cta, ...otherData } = props;
+
   return (
     <div>
       <Carousel>
         <CarouselContent>
-          {heroSliderData.slides.length > 0 &&
-            heroSliderData.slides.map((slide, idx) => {
+          {slides.length > 0 &&
+            slides.map((slide, idx) => {
               return (
                 <CarouselItem key={idx} className="pl-0">
                   <div className="relative">
@@ -100,77 +87,20 @@ export default function HeroSlider({ content }: HeroSliderProps) {
         <CarouselPrevious className="bg-black/50 text-white rounded-none hover:bg-yellow translate-x-16 border-none" />
         <CarouselNext className="bg-black/50 text-white rounded-none hover:bg-yellow -translate-x-16 border-none" />
       </Carousel>
-      {heroSliderData?.cta && (
+      {cta && (
         <div className="container bg-yellow p-6 md:p-8 flex gap-4 flex-col justify-center items-center md:flex-row md:justify-between -translate-y-[40px]">
           <p className="uppercase font-semibold text-lg text-black font-mont">
-            {heroSliderData.cta.text ||
-              "We understand your needs of constructions."}
+            {cta.text || "We understand your needs of constructions."}
           </p>
 
           <Link
-            href={heroSliderData.cta.button.href || "#"}
+            href={cta.button.href || "#"}
             className="bg-black px-4 py-3 text-white text-nowrap hover:bg-dark-gray hover:text-yellow font-semibold"
           >
-            {heroSliderData.cta.button.label || "Contact Now"}
+            {cta.button.label || "Contact Now"}
           </Link>
         </div>
       )}
     </div>
   );
 }
-
-// const heroSliderData = {
-//   slides: [
-//     {
-//       preheading: "20 YEARS OF EXCELLENCE IN",
-//       heading: "CONSTRUCTION INDUSTRY",
-//       description: "Building dreams with quality and precision.",
-//       image: "https://picsum.photos/800/350?random=1",
-//       button1: {
-//         text: "OUR SERVICES",
-//         link: "/services",
-//       },
-//       button2: {
-//         text: "CONTACT NOW",
-//         link: "/contact",
-//       },
-//     },
-//     {
-//       preheading: "INNOVATIVE DESIGN AND PLANNING",
-//       heading: "ARCHITECTURAL SOLUTIONS",
-//       description: "Crafting spaces that inspire and perform.",
-//       image: "https://picsum.photos/800/350?random=2",
-//       button1: {
-//         text: "LEARN MORE",
-//         link: "/design",
-//       },
-//       button2: {
-//         text: "GET A QUOTE",
-//         link: "/quote",
-//       },
-//     },
-//     {
-//       preheading: "DEDICATED TO YOUR VISION",
-//       heading: "CUSTOM BUILD PROJECTS",
-//       description: "Transforming your ideas into reality.",
-//       image: "https://picsum.photos/800/350?random=3",
-//       button1: {
-//         text: "VIEW PROJECTS",
-//         link: "/projects",
-//       },
-//       button2: {
-//         text: "CONTACT US",
-//         link: "/contact",
-//       },
-//     },
-//   ],
-//   autoplay: true,
-//   interval: 5000,
-//   cta: {
-//     text: "We understand your needs of constructions.",
-//     button: {
-//       href: "/quote",
-//       label: "Get a Quote",
-//     },
-//   },
-// };

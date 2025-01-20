@@ -75,3 +75,59 @@ const richtextdata = {
     },
   ],
 };
+
+const heroSliderData = {
+  slides: [
+    {
+      preheading: "20 YEARS OF EXCELLENCE IN",
+      heading: "CONSTRUCTION INDUSTRY",
+      description: "Building dreams with quality and precision.",
+      image: "https://picsum.photos/800/350?random=1",
+      button1: {
+        text: "OUR SERVICES",
+        link: "/services",
+      },
+      button2: {
+        text: "CONTACT NOW",
+        link: "/contact",
+      },
+    },
+    {
+      preheading: "INNOVATIVE DESIGN AND PLANNING",
+      heading: "ARCHITECTURAL SOLUTIONS",
+      description: "Crafting spaces that inspire and perform.",
+      image: "https://picsum.photos/800/350?random=2",
+      button1: {
+        text: "LEARN MORE",
+        link: "/design",
+      },
+      button2: {
+        text: "GET A QUOTE",
+        link: "/quote",
+      },
+    },
+    {
+      preheading: "DEDICATED TO YOUR VISION",
+      heading: "CUSTOM BUILD PROJECTS",
+      description: "Transforming your ideas into reality.",
+      image: "https://picsum.photos/800/350?random=3",
+      button1: {
+        text: "VIEW PROJECTS",
+        link: "/projects",
+      },
+      button2: {
+        text: "CONTACT US",
+        link: "/contact",
+      },
+    },
+  ],
+  autoplay: true,
+  interval: 5000,
+  cta: {
+    text: "We understand your needs of constructions.",
+    button: {
+      href: "/quote",
+      label: "Get a Quote",
+    },
+  },
+};

@@ -14,5 +14,5 @@ export type link = {
   label: string;
   href: string;
   target?: boolean;
-  buttonVariant: "default" | "secondary" | "outline" | null | undefined;
+  buttonVariant?: "default" | "secondary" | "outline" | null | undefined;
 };
