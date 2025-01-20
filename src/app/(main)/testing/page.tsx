@@ -10,7 +10,7 @@ export default function TestPage() {
   return (
     <div className="flex flex-col">
       {/* <HeroSlider /> */}
-      <AboutSection />
+      {/* <AboutSection /> */}
       <ServiceSection />
       <ProjectSection />
       <ArticleSection />
