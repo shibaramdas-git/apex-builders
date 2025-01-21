@@ -2,10 +2,10 @@ import Link from "next/link";
 
 export type ServiceSectionProps = {};
 
-export default function ServiceSection(props: any) {
+export default function ServiceSection2(props: any) {
   return (
     <section className="py-12">
-      <div className="container mx-auto">
+      <div className="container mx-auto bg-green-200">
         <div className="text-center mb-8">
           <p className="text-lg md:text-xl font-light uppercase text-gray-600">
             {data.sectionPreheading || "OUR Services"}
@@ -128,3 +128,57 @@ const data = {
     },
   ],
 };
+
+// Design 02 - curved sides half and half implement it later
+// export default function ServiceSection2() {
+// const services = [
+//   { id: 1, title: "Service 1", description: "Description for service 1" },
+//   { id: 2, title: "Service 2", description: "Description for service 2" },
+//   { id: 3, title: "Service 3", description: "Description for service 3" },
+//   { id: 4, title: "Service 4", description: "Description for service 4" },
+//   { id: 5, title: "Service 5", description: "Description for service 5" },
+//   { id: 6, title: "Service 6", description: "Description for service 6" },
+//   { id: 7, title: "Service 7", description: "Description for service 7" },
+//   { id: 8, title: "Service 8", description: "Description for service 8" },
+//   { id: 9, title: "Service 9", description: "Description for service 9" },
+//   { id: 10, title: "Service 10", description: "Description for service 10" },
+// ];
+
+//   return (
+//     <section className="flex justify-center items-center h-screen bg-gray-100">
+//       <div className="relative w-[80%] max-w-4xl bg-green-200 shadow-lg rounded-lg flex overflow-hidden">
+//         {/* Right Curved Shape */}
+//         <div
+//           className="w-1/4 bg-yellow border border-black"
+//           style={{
+//             clipPath: "ellipse(100% 50% at 0 50%)",
+//           }}
+//         ></div>
+//         {/* Service Items */}
+//         <div className="flex-1 p-8 border border-black">
+//           {services.map((service) => (
+//             <div
+//               key={service.id}
+//               className="mb-6 flex items-center gap-4 bg-red-200 p-4 rounded-lg shadow-md"
+//             >
+//               {/* Icon Placeholder */}
+//               <div className="flex items-center justify-center w-12 h-12 bg-yellow-400 rounded-full">
+//                 <img
+//                   src="/icons/settings.svg"
+//                   alt="icon"
+//                   width={24}
+//                   height={24}
+//                 />
+//               </div>
+//               {/* Service Content */}
+//               <div>
+//                 <h3 className="font-semibold text-lg">{service.title}</h3>
+//                 <p className="text-gray-600 text-sm">{service.description}</p>
+//               </div>
+//             </div>
+//           ))}
+//         </div>
+//       </div>
+//     </section>
+//   );
+// }

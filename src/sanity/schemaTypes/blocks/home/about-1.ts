@@ -1,11 +1,11 @@
 import { defineType, defineField } from "sanity";
-import { FcAbout } from "react-icons/fc";
+import { BsTextParagraph } from "react-icons/bs";
 
 export default defineType({
   name: "about-1",
   title: "About Section 1",
   type: "object",
-  icon: FcAbout,
+  icon: BsTextParagraph,
   fields: [
     defineField({
       name: "sectionHeading",

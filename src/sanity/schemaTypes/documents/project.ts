@@ -41,14 +41,6 @@ export default defineType({
       validation: (Rule) => Rule.required().max(1000),
     }),
     defineField({
-      name: "category",
-      title: "Category",
-      type: "reference",
-      to: [{ type: "category" }],
-      description: "Select a category for the project.",
-      validation: (Rule) => Rule.required(),
-    }),
-    defineField({
       name: "status",
       title: "Project Status",
       type: "string",

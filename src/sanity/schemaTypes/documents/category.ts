@@ -21,18 +21,5 @@ export default defineType({
       },
       validation: (Rule) => Rule.required(),
     }),
-    defineField({
-      name: "type",
-      title: "Type",
-      type: "string",
-      description: "Type of category: Article, Project, or Both.",
-      options: {
-        list: [
-          { title: "Article", value: "article" },
-          { title: "Project", value: "project" },
-        ], // Dropdown selection
-        layout: "dropdown", // Optional: "radio" or "dropdown"
-      },
-    }),
   ],
 });

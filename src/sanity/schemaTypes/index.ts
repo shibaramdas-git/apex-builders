@@ -13,6 +13,8 @@ import richText from "./blocks/rich-text";
 import heroSlider from "./blocks/home/hero-slider";
 import { seoSchema } from "./blocks/seo";
 import about1 from "./blocks/home/about-1";
+import serviceSection from "./blocks/home/services-1";
+import service from "./documents/service";
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
@@ -22,15 +24,18 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     project,
     category,
     author,
+    service,
     // Blocks
     blockContent,
     richText,
+    // Home page specific
     heroSlider,
+    about1,
     hero1,
+    serviceSection,
     gallery,
     faqs,
     cta1,
-    about1,
     // Objects
     seoSchema,
   ],

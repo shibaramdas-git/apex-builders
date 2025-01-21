@@ -41,6 +41,7 @@ export default defineType({
         { type: "faqsSection" },
         { type: "heroSlider" },
         { type: "about-1" },
+        { type: "servicesSection" },
       ],
     }),
     defineField({
