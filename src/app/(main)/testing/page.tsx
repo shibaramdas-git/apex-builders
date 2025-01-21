@@ -14,10 +14,10 @@ export default function TestPage() {
       {/* <AboutSection /> */}
       <ServiceSection />
       {/* Curved serivce list */}
-      <ServiceSection2 />
-      <ProjectSection />
-      <ArticleSection />
-      <TestimonialSection />
+      {/* <ServiceSection2 /> */}
+      {/* <ProjectSection /> */}
+      {/* <ArticleSection /> */}
+      {/* <TestimonialSection /> */}
     </div>
   );
 }

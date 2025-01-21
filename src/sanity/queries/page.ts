@@ -1,11 +1,12 @@
 import { groq } from "next-sanity";
+import { service1Query } from "./home/service-1";
 
 export const PAGE_QUERY = groq`*[_type=="page" && slug.current == $slug][0]{
-    blocks,
+    blocks[]{
+    ...,
+    ${service1Query},
+    },
     title,
     slug,
-    meta_title,
-    meta_description,
-    noindex,
-    ogImage
+    seo
 }`;
