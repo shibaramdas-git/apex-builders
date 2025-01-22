@@ -27,9 +27,9 @@ export default function TestimonialSection() {
         <TestimonialSingle />
       )}
       {data.clients && data.clients.design === "design1" ? (
-        <Clients1 />
+        <Clients1 clients={data.clients.clients} />
       ) : (
-        <Clients2 />
+        <Clients2 clients={data.clients.clients} />
       )}
     </section>
   );
@@ -47,7 +47,6 @@ const data = {
         avatar: "https://placehold.co/150x150",
         rating: 3,
         position: "CEO, ABC Corp",
-        companyLogo: "https://placehold.co/120x60",
       },
       {
         id: "2",
@@ -56,7 +55,6 @@ const data = {
         avatar: "https://picsum.photos/seed/person1/400/400",
         rating: 4,
         position: "Marketing Manager, XYZ Ltd",
-        companyLogo: "https://placehold.co/120x60",
       },
       {
         id: "3",
@@ -65,7 +63,6 @@ const data = {
         avatar: "https://placehold.co/150x150",
         rating: 5,
         position: "Product Manager, MNO Inc",
-        companyLogo: "https://placehold.co/120x60",
       },
       {
         id: "4",
@@ -75,7 +72,6 @@ const data = {
         avatar: "https://picsum.photos/seed/person3/400/400",
         rating: 2,
         position: "CTO, DEF Group",
-        companyLogo: "https://placehold.co/120x60",
       },
       {
         id: "5",
@@ -85,7 +81,6 @@ const data = {
         avatar: "https://placehold.co/150x150",
         rating: 1,
         position: "CTO, DEF Group",
-        companyLogo: "https://placehold.co/120x60",
       },
     ],
   },

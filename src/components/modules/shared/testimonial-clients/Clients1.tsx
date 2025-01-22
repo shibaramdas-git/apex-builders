@@ -3,7 +3,14 @@ export type Clients1Props = {
   className?: string;
 };
 
-export default function Clients1({ className }: Clients1Props) {
+export default function Clients1({
+  className,
+  clients,
+}: {
+  className?: string;
+  clients: any;
+}) {
+  console.log(clients);
   return (
     <div
       className={clsx(
@@ -13,7 +20,7 @@ export default function Clients1({ className }: Clients1Props) {
     >
       {/* First Row: Moves to the left */}
       <div className="p-2 flex space-x-4 justify-center absolute animate-left">
-        {clients.map((client, idx) => (
+        {clients.map((client: any, idx: number) => (
           <div className="w-[130px]">
             <img
               src={client.src || "https://placehold.co/50x100"}
@@ -25,7 +32,7 @@ export default function Clients1({ className }: Clients1Props) {
       </div>
       {/* Second Row: Moves to the right */}
       <div className="p-2 flex space-x-4 justify-center absolute bottom-0 right-0 animate-right">
-        {clients.map((client, idx) => (
+        {clients.map((client: any, idx: number) => (
           <div className="w-[130px]">
             <img
               src={client.src || "https://placehold.co/50x100"}
@@ -41,15 +48,15 @@ export default function Clients1({ className }: Clients1Props) {
   );
 }
 
-const clients = [
-  { id: 1, src: "https://placehold.co/10x100", alt: "Client 1" },
-  { id: 2, src: "https://placehold.co/20x100", alt: "Client 2" },
-  { id: 3, src: "https://placehold.co/30x100", alt: "Client 3" },
-  { id: 4, src: "https://placehold.co/40x100", alt: "Client 4" },
-  { id: 5, src: "https://placehold.co/50x100", alt: "Client 5" },
-  { id: 6, src: "https://placehold.co/60x100", alt: "Client 6" },
-  { id: 7, src: "https://placehold.co/70x100", alt: "Client 7" },
-  { id: 8, src: "https://placehold.co/80x100", alt: "Client 8" },
-  { id: 9, src: "https://placehold.co/90x100", alt: "Client 9" },
-  { id: 10, src: "https://placehold.co/100x100", alt: "Client 10" },
-];
+// const clients = [
+//   { id: 1, src: "https://placehold.co/10x100", alt: "Client 1" },
+//   { id: 2, src: "https://placehold.co/20x100", alt: "Client 2" },
+//   { id: 3, src: "https://placehold.co/30x100", alt: "Client 3" },
+//   { id: 4, src: "https://placehold.co/40x100", alt: "Client 4" },
+//   { id: 5, src: "https://placehold.co/50x100", alt: "Client 5" },
+//   { id: 6, src: "https://placehold.co/60x100", alt: "Client 6" },
+//   { id: 7, src: "https://placehold.co/70x100", alt: "Client 7" },
+//   { id: 8, src: "https://placehold.co/80x100", alt: "Client 8" },
+//   { id: 9, src: "https://placehold.co/90x100", alt: "Client 9" },
+//   { id: 10, src: "https://placehold.co/100x100", alt: "Client 10" },
+// ];

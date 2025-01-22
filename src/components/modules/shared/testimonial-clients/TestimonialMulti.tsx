@@ -5,7 +5,6 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { LiaStarSolid } from "react-icons/lia";
 import { IoStarSharp } from "react-icons/io5";
 
 export default function TestimonialMulti(props: any) {
@@ -29,8 +28,8 @@ export default function TestimonialMulti(props: any) {
 }
 
 function TestimonialCard({ testimonial }: { testimonial: any }) {
-  const { name, message, avatar, rating, position, companyLogo } = testimonial;
-  console.log(testimonial);
+  const { name, message, avatar, rating, position } = testimonial;
+  // console.log(testimonial);
 
   return (
     <div className="bg-white rounded-lg shadow-md p-6 max-w-[350px] mx-auto h-[400px] ">
@@ -59,11 +58,6 @@ function TestimonialCard({ testimonial }: { testimonial: any }) {
             <IoStarSharp />
           </div>
         ))}
-      </div>
-
-      {/* Company Logo */}
-      <div className="flex justify-center mt-4">
-        <img src={companyLogo} alt="Company Logo" className="w-24 h-auto" />
       </div>
     </div>
   );
