@@ -128,13 +128,15 @@ function ServiceDesign1(props: any) {
       </div>
 
       {/* Center Image */}
-      <div className="border border-gray-300 w-full lg:w-1/3 h-64 bg-gray-200">
-        <img
-          src={urlFor(image).url()}
-          alt="Service Showcase"
-          className="w-full h-full object-cover"
-        />
-      </div>
+      {image && (
+        <div className="w-full lg:w-1/3 h-64 bg-gray-200">
+          <img
+            src={urlFor(image).url()}
+            alt="Service Showcase"
+            className="w-full h-full object-cover rounded-lg shadow-md"
+          />
+        </div>
+      )}
 
       {/* Right Services */}
       <div className="flex flex-col gap-6">
@@ -151,6 +153,7 @@ function ServiceDesign1(props: any) {
 // --------------------------------------------------------------------------
 // Design 02
 // --------------------------------------------------------------------------
+
 function ServiceDesign2(props: any) {
   const { services } = props;
 

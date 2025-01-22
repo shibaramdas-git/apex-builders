@@ -1,9 +1,9 @@
 import clsx from "clsx";
-export type Clients02Props = {
+export type Clients1Props = {
   className?: string;
 };
 
-export default function Clients02({ className }: Clients02Props) {
+export default function Clients1({ className }: Clients1Props) {
   return (
     <div
       className={clsx(
