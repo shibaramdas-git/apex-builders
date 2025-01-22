@@ -5,12 +5,14 @@ import RichText from "./RichText";
 import HeroSlider from "./modules/home/HeroSlider";
 import AboutSection from "./modules/home/AboutSection";
 import ServiceSection from "./modules/home/ServiceSection";
+import TestimonialSection from "./modules/shared/testimonial-clients/Testimonial&Clients";
 
 const COMPONENT_MAP: { [key: string]: React.ComponentType<any> } = {
   heroSlider: HeroSlider,
   "hero-1": Hero,
   "about-1": AboutSection,
   servicesSection: ServiceSection,
+  "testimonial&Clients": TestimonialSection,
   faqsSection: Faqs,
   richText: RichText,
   "cta-1": Cta,

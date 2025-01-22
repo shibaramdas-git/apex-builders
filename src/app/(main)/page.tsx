@@ -7,6 +7,5 @@ export default async function IndexPage() {
   if (!page) {
     return <Custom404 />;
   }
-
   return <Blocks blocks={page?.blocks} />;
 }
