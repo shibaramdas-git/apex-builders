@@ -6,13 +6,13 @@ export default defineType({
   title: "Testimonials & clients section",
   fields: [
     defineField({
-      name: "showTestimonials",
+      name: "showTestimonial",
       type: "boolean",
       title: "Enable Testimonial Section",
       description: "Toggle to show or hide the testimonial section.",
     }),
     defineField({
-      name: "testimonials",
+      name: "testimonial",
       type: "object",
       title: "Testimonial Section",
       hidden: ({ parent }) => !parent?.showTestimonial,
@@ -112,15 +112,16 @@ export default defineType({
           title: "Clients Heading",
         }),
         defineField({
-          name: "designOptions",
+          name: "design",
           type: "string",
           title: "Design Options",
           options: {
             list: [
-              { title: "Grid Layout", value: "grid" },
-              { title: "Carousel", value: "carousel" },
+              { title: "Design 1 : Animated clients strip", value: "design1" },
+              { title: "Design 2 : Static clients strip", value: "design2" },
             ],
           },
+          initialValue: "design1",
         }),
         defineField({
           name: "clientImages",

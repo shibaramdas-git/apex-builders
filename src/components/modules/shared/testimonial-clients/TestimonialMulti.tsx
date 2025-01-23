@@ -5,6 +5,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import { urlFor } from "@/sanity/lib/image";
 import { IoStarSharp } from "react-icons/io5";
 
 export default function TestimonialMulti(props: any) {
@@ -28,7 +29,7 @@ export default function TestimonialMulti(props: any) {
 }
 
 function TestimonialCard({ testimonial }: { testimonial: any }) {
-  const { name, message, avatar, rating, position } = testimonial;
+  const { author, authorImage, message, rating, position } = testimonial;
   // console.log(testimonial);
 
   return (
@@ -36,15 +37,15 @@ function TestimonialCard({ testimonial }: { testimonial: any }) {
       {/* Avatar */}
       <div className="flex justify-center">
         <img
-          src={avatar}
-          alt={name}
+          src={urlFor(authorImage).url()}
+          alt={author}
           className="w-24 h-24 rounded-full border-4 border-yellow-400 object-cover"
         />
       </div>
 
       {/* Name and Position */}
       <div className="text-center mt-4">
-        <h5 className="text-xl font-bold text-yellow">{name}</h5>
+        <h5 className="text-xl font-bold text-yellow">{author}</h5>
         <p className="text-sm ">{position}</p>
       </div>
 

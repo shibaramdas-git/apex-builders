@@ -182,9 +182,9 @@ h5 {
 }
 
 .animate-left {
-  animation: moveLeft 15s linear infinite; /* Adjust duration as needed */
+  animation: moveLeft 40s linear infinite; /* Adjust duration as needed */
 }
 
 .animate-right {
-  animation: moveRight 15s linear infinite; /* Adjust duration as needed */
+  animation: moveRight 30s linear infinite; /* Adjust duration as needed */
 }
