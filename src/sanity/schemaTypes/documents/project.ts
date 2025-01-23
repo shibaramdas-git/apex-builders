@@ -79,7 +79,7 @@ export default defineType({
     select: {
       title: "title",
       subtitle: "status",
-      media: "images.0",
+      media: "thumbnailImage",
     },
   },
 });

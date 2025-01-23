@@ -1,3 +1,4 @@
+import { urlFor } from "@/sanity/lib/image";
 import Link from "next/link";
 
 const articles = [
@@ -27,34 +28,36 @@ const articles = [
   },
 ];
 
-export default function ArticleSection() {
+export default function ArticleSection(props: any) {
+  const { heading, sectionPreheading, articles } = props;
+  console.log(props);
   return (
     <section>
       <div className="container">
         <div>
           <p className="font-mont text-xl md:text-2xl font-normal mb-2 text-center uppercase">
-            Articles
+            {sectionPreheading || "OUR ARTICLES"}
           </p>
           <h2 className="text-3xl lg:text-4xl mb-3 text-center">
-            RECENT ARTICLES
+            {heading || "Top Articles"}
           </h2>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {articles.map((article) => (
-            <div key={article.id} className="">
-              <Link href={article.link}>
+          {articles.map((article: any) => (
+            <div key={article._id} className="">
+              <Link href={`/articles/${article.slug.current}`}>
                 <div className="overflow-hidden rounded-md">
                   <img
-                    src={article.image}
-                    alt="article image"
+                    src={urlFor(article.thumbnailImage).url()}
+                    alt={article.title || "Thumbnail image"}
                     className="rounded-md hover:scale-110 w-full h-full object-cover transition-transform duration-300 ease-in-out"
                   />
                 </div>
-                <p className="text-lg font-semibold text-black mt-4 mb-2 hover:text-yellow h-[60px] overflow-hidden">
+                <p className="text-lg font-semibold text-black mt-4 mb-2 hover:text-yellow overflow-hidden">
                   {article.title}
                 </p>
                 <p className="uppercase">
-                  {article.date} , {article.timeToRead}
+                  {article.publishedAt} , {article.readingTime} min
                 </p>
               </Link>
             </div>

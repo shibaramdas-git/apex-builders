@@ -2,7 +2,6 @@ import { urlFor } from "@/sanity/lib/image";
 import React from "react";
 
 export default function Clients2({ clients }: { clients: any }) {
-  console.log("jello");
   return (
     <div className=" max-w-4xl mx-auto flex gap-2 flex-wrap items-center justify-center py-10 relative">
       {clients.map((client: any) => {

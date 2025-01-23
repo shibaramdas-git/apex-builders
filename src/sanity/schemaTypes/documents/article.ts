@@ -38,6 +38,12 @@ export default defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
+      name: "shortDescription",
+      type: "text",
+      title: "Short Description",
+      rows: 2,
+    }),
+    defineField({
       name: "publishedAt",
       title: "Published At",
       type: "date",
@@ -59,8 +65,8 @@ export default defineType({
       to: { type: "author" },
     }),
     defineField({
-      name: "image",
-      title: "Image",
+      name: "thumbnailImage",
+      title: "Thumbnail Image",
       type: "image",
       group: "settings",
       options: {
@@ -88,32 +94,12 @@ export default defineType({
       group: "content",
     }),
     defineField({
-      name: "meta_title",
-      title: "Meta Title",
-      type: "string",
+      name: "seo",
+      type: "seo",
       group: "seo",
-    }),
-    defineField({
-      name: "meta_description",
-      title: "Meta Description",
-      type: "text",
-      group: "seo",
-    }),
-    defineField({
-      name: "noindex",
-      title: "No Index",
-      type: "boolean",
-      initialValue: false,
-      group: "seo",
-    }),
-    defineField({
-      name: "ogImage",
-      title: "Open Graph Image - [1200x630]",
-      type: "image",
-      group: "seo",
+      title: "SEO Data",
     }),
   ],
-
   preview: {
     select: {
       title: "title",

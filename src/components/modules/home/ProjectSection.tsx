@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function ProjectSection(props: any) {
   const { sectionPreheading, heading, projects } = props;
-  console.log(props);
+  // console.log(props);
   return (
     <section>
       <div className="container py-12">

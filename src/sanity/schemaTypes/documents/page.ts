@@ -44,6 +44,7 @@ export default defineType({
         { type: "servicesSection" },
         { type: "testimonial&Clients" },
         { type: "projectsSection" },
+        { type: "articlesSection" },
       ],
     }),
     defineField({

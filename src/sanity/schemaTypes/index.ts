@@ -17,6 +17,7 @@ import serviceSection from "./blocks/home/services-1";
 import service from "./documents/service";
 import testimonialsClients from "./blocks/testimonial-clients";
 import projectsSection from "./blocks/home/projects-section";
+import articlesSection from "./blocks/home/articles-section";
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
@@ -37,6 +38,7 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     hero1,
     serviceSection,
     projectsSection,
+    articlesSection,
     gallery,
     faqs,
     cta1,
