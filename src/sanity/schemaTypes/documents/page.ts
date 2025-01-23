@@ -35,6 +35,7 @@ export default defineType({
       title: "Page Blocks",
       of: [
         { type: "hero-1" },
+        // { type: "block-content" },
         { type: "richText" },
         { type: "gallery" },
         { type: "cta-1" },

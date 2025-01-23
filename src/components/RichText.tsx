@@ -1,6 +1,10 @@
+import { urlFor } from "@/sanity/lib/image";
+import { url } from "inspector";
+
 interface RichTextBlock {
   _type: "block";
   style: string;
+  listItem?: string;
   children: Array<{
     _type: "span";
     text: string;
@@ -21,7 +25,7 @@ interface RichTextProps {
 
 const RichText: React.FC<RichTextProps> = ({ content }) => {
   const renderBlock = (block: RichTextBlock) => {
-    const { style, children } = block;
+    const { style, children, listItem } = block;
 
     const renderChildren = () =>
       children.map((child, index) => {
@@ -54,9 +58,13 @@ const RichText: React.FC<RichTextProps> = ({ content }) => {
         return <h3 className="text-2xl font-bold mb-4">{renderChildren()}</h3>;
       case "h4":
         return <h4 className="text-xl font-bold mb-4">{renderChildren()}</h4>;
+      case "h5":
+        return <h5 className="text-lg font-bold mb-4">{renderChildren()}</h5>;
+      case "h6":
+        return <h6 className="text-base font-bold mb-4">{renderChildren()}</h6>;
       case "blockquote":
         return (
-          <blockquote className="border-l-4 border-gray-400 pl-4 italic text-gray-600 mb-4">
+          <blockquote className="border-l-4 border-gray-400 pl-4 italic text-gray-600 mb-4 text-blue-900">
             {renderChildren()}
           </blockquote>
         );
@@ -70,7 +78,7 @@ const RichText: React.FC<RichTextProps> = ({ content }) => {
     return (
       <div className="mb-4">
         <img
-          src={image.asset._ref} // You'll need to resolve the URL, e.g., using `@sanity/image-url`
+          src={urlFor(image.asset).url()} // You'll need to resolve the URL, e.g., using `@sanity/image-url`
           alt={image.alt || "Image"}
           className="max-w-full h-auto"
         />
