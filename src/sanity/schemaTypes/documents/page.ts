@@ -42,6 +42,7 @@ export default defineType({
         { type: "heroSlider" },
         { type: "about-1" },
         { type: "servicesSection" },
+        { type: "testimonial&Clients" },
       ],
     }),
     defineField({
