@@ -16,6 +16,7 @@ import about1 from "./blocks/home/about-1";
 import serviceSection from "./blocks/home/services-1";
 import service from "./documents/service";
 import testimonialsClients from "./blocks/testimonial-clients";
+import projectsSection from "./blocks/home/projects-section";
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
@@ -30,11 +31,12 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     blockContent,
     richText,
     testimonialsClients,
-    // Home page specific
+    // Home page specific blocks
     heroSlider,
     about1,
     hero1,
     serviceSection,
+    projectsSection,
     gallery,
     faqs,
     cta1,

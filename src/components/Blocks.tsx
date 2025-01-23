@@ -6,6 +6,7 @@ import HeroSlider from "./modules/home/HeroSlider";
 import AboutSection from "./modules/home/AboutSection";
 import ServiceSection from "./modules/home/ServiceSection";
 import TestimonialSection from "./modules/shared/testimonial-clients/Testimonial&Clients";
+import ProjectSection from "./modules/home/ProjectSection";
 
 const COMPONENT_MAP: { [key: string]: React.ComponentType<any> } = {
   heroSlider: HeroSlider,
@@ -13,6 +14,7 @@ const COMPONENT_MAP: { [key: string]: React.ComponentType<any> } = {
   "about-1": AboutSection,
   servicesSection: ServiceSection,
   "testimonial&Clients": TestimonialSection,
+  projectsSection: ProjectSection,
   faqsSection: Faqs,
   richText: RichText,
   "cta-1": Cta,

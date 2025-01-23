@@ -13,6 +13,25 @@ export default defineType({
       validation: (Rule) => Rule.required().max(100),
     }),
     defineField({
+      name: "shortDescription",
+      type: "text",
+      title: "Short Description",
+      rows: 2,
+    }),
+    defineField({
+      name: "slug",
+      type: "slug",
+      title: "Slug",
+      options: { source: "title", maxLength: 96 },
+    }),
+    defineField({
+      name: "thumbnailImage",
+      title: "Thumbnail Image",
+      description: "The thumbnail image of the project.",
+      type: "image",
+      options: { hotspot: true },
+    }),
+    defineField({
       name: "images",
       title: "Project Images",
       type: "array",
@@ -34,8 +53,8 @@ export default defineType({
       validation: (Rule) => Rule.required().min(1),
     }),
     defineField({
-      name: "description",
-      title: "Description",
+      name: "content",
+      title: "Content",
       type: "block-content",
       description: "A detailed description of the project.",
       validation: (Rule) => Rule.required().max(1000),
