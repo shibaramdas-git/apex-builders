@@ -8,6 +8,7 @@ import ServiceSection from "./modules/home/ServiceSection";
 import TestimonialSection from "./modules/shared/testimonial-clients/Testimonial&Clients";
 import ProjectSection from "./modules/home/ProjectSection";
 import ArticleSection from "./modules/home/ArticleSection";
+import PortableTextRenderer from "./PortableText";
 
 const COMPONENT_MAP: { [key: string]: React.ComponentType<any> } = {
   heroSlider: HeroSlider,
@@ -17,8 +18,9 @@ const COMPONENT_MAP: { [key: string]: React.ComponentType<any> } = {
   "testimonial&Clients": TestimonialSection,
   projectsSection: ProjectSection,
   articlesSection: ArticleSection,
+  richText: PortableTextRenderer,
   faqsSection: Faqs,
-  richText: RichText,
+  // richText: RichText,
   "cta-1": Cta,
 };
 

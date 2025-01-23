@@ -10,8 +10,6 @@ export default async function AboutPage() {
     return <Custom404 />;
   }
 
-  console.log(page);
-
   return (
     <>
       <Banner

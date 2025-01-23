@@ -68,9 +68,25 @@ const RichText: React.FC<RichTextProps> = ({ content }) => {
             {renderChildren()}
           </blockquote>
         );
-      case "normal":
+      // return <p className="text-base mb-4">{renderChildren()}</p>;
       default:
-        return <p className="text-base mb-4">{renderChildren()}</p>;
+        if (listItem === "bullet") {
+          return (
+            <ul className="list-disc pl-4 mb-4">
+              {renderChildren()}
+              <li>hello bullet</li>
+            </ul>
+          );
+        } else if (listItem === "number") {
+          return (
+            <ol className="list-decimal pl-4 mb-4">
+              {renderChildren()}
+              <li>hello number</li>
+            </ol>
+          );
+        } else {
+          return <p className="text-base mb-4">{renderChildren()}</p>;
+        }
     }
   };
 
