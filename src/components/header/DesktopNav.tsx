@@ -48,8 +48,8 @@ export default function DesktopNav(props: DesktopNavProps) {
         </ul>
       )}
 
-      <div className="py-4 hover:text-yellow">
-        <Link href="/studio">STUDIO</Link>
+      <div className="py-4 hover:text-yellow uppercase">
+        <Link href="/explore-site">Expolre Site</Link>
       </div>
     </div>
   );

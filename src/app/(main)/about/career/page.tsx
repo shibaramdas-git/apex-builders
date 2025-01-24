@@ -1,22 +1,23 @@
 import Banner from "@/components/Banner";
 import Blocks from "@/components/Blocks";
-import fetchSanityPageBySlug from "../actions";
+import fetchSanityPageBySlug from "../../actions";
 import Custom404 from "@/components/404";
 
-export default async function ProjectsPage() {
-  const page = await fetchSanityPageBySlug({ slug: "home" });
+export default async function AboutPage() {
+  const page = await fetchSanityPageBySlug({ slug: "career" });
 
   if (!page) {
     return <Custom404 />;
   }
+
   return (
     <>
       <Banner
-        heading="Our Projects"
-        path={"/projects"}
+        heading="About US"
+        path={"/about/career"}
         bgImageSrc="/buildings/photodune-3979102-superb-backyard-m-1024x754.jpg"
       />
-      <Blocks blocks={page?.blocks} />;
+      <Blocks blocks={page?.blocks} />
     </>
   );
 }

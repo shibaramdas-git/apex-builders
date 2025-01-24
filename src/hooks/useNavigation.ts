@@ -25,7 +25,7 @@ const company = {
     },
     {
       label: "OUR TEAM",
-      href: "/about/team",
+      href: "/about/teams",
     },
     {
       label: "CAREER",
@@ -33,7 +33,7 @@ const company = {
     },
     {
       label: "FAQ",
-      href: "/about/faq",
+      href: "/about/faqs",
     },
   ],
 };

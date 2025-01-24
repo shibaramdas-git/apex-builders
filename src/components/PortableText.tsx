@@ -11,7 +11,7 @@ const portableTextComponents: PortableTextProps["components"] = {
         <img
           src={urlFor(value.asset).url()}
           alt={value.alt || "Image"}
-          className="max-w-full mx-auto rounded-md shadow-sm mb-6"
+          className="float-right max-w-xl mx-auto h-auto rounded-md shadow-sm mb-6"
         />
       );
     },

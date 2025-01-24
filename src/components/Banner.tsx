@@ -16,7 +16,7 @@ export default function Banner(props: IBannerProps) {
       style={{ backgroundImage: `url(${bgImageSrc})` }}
     >
       <div className="text-white uppercase flex flex-col items-center justify-center h-[300px] bg-[#000000be]">
-        <h1 className="text-2xl md:text-5xl font-black mb-1 md:mb-2">
+        <h1 className="text-2xl md:text-5xl font-black mb-1 md:mb-2 text-white">
           {heading || "Heading"}
         </h1>
         <BreadScrumb path={path} />
