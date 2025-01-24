@@ -23,6 +23,7 @@ export default defineType({
       name: "title",
       title: "Title",
       type: "string",
+      description: "A short and concise title of the article.",
       group: "content",
       validation: (Rule) => Rule.required(),
     }),
@@ -41,6 +42,7 @@ export default defineType({
       name: "shortDescription",
       type: "text",
       title: "Short Description",
+      description: "This description will be displayed on every article card.",
       rows: 2,
     }),
     defineField({
@@ -88,10 +90,22 @@ export default defineType({
       of: [{ type: "reference", to: { type: "category" } }],
     }),
     defineField({
-      name: "body",
-      title: "Body",
-      type: "block-content",
-      group: "content",
+      name: "blocks",
+      type: "array",
+      title: "Page Blocks",
+      of: [
+        { type: "hero-1" },
+        { type: "richText" },
+        { type: "gallery" },
+        { type: "cta-1" },
+        { type: "faqsSection" },
+        { type: "heroSlider" },
+        { type: "about-1" },
+        { type: "servicesSection" },
+        { type: "testimonial&Clients" },
+        { type: "projectsSection" },
+        { type: "articlesSection" },
+      ],
     }),
     defineField({
       name: "seo",
@@ -104,7 +118,7 @@ export default defineType({
     select: {
       title: "title",
       author: "author.name",
-      media: "image",
+      media: "thumbnailImage",
     },
     prepare(selection) {
       const { author } = selection;
