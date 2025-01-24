@@ -11,7 +11,7 @@ const portableTextComponents: PortableTextProps["components"] = {
         <img
           src={urlFor(value.asset).url()}
           alt={value.alt || "Image"}
-          className="float-right max-w-xl mx-auto h-auto rounded-md shadow-sm mb-6"
+          className="max-w-xl mx-auto h-auto rounded-md shadow-sm mb-6 m-2"
         />
       );
     },
@@ -70,7 +70,7 @@ const portableTextComponents: PortableTextProps["components"] = {
 
 const PortableTextRenderer = (props: any) => {
   return (
-    <section className="container">
+    <section className="container py-8">
       <PortableText value={props.content} components={portableTextComponents} />
     </section>
   );

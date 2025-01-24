@@ -8,7 +8,6 @@ import author from "./documents/author";
 import category from "./documents/category";
 import article from "./documents/article";
 import project from "./documents/project";
-import blockContent from "./blocks/block-content";
 import richText from "./blocks/rich-text";
 import heroSlider from "./blocks/home/hero-slider";
 import { seoSchema } from "./blocks/seo";
@@ -18,6 +17,7 @@ import service from "./documents/service";
 import testimonialsClients from "./blocks/testimonial-clients";
 import projectsSection from "./blocks/home/projects-section";
 import articlesSection from "./blocks/home/articles-section";
+import blockContent from "./blocks/block-content";
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
@@ -29,8 +29,8 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     author,
     service,
     // Blocks
-    blockContent,
-    richText,
+    richText /* Object */,
+    blockContent /* Array */,
     testimonialsClients,
     // Home page specific blocks
     heroSlider,

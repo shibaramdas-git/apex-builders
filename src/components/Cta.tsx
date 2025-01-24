@@ -1,3 +1,5 @@
+import { urlFor } from "@/sanity/lib/image";
+
 interface CTAProps {
   title: string;
   description: string;
@@ -12,11 +14,11 @@ const CallToAction: React.FC<CTAProps> = ({
   slug,
 }) => {
   return (
-    <div className="flex flex-col md:flex-row items-center gap-6 bg-gray-100 p-6 rounded-lg shadow-lg max-w-5xl mx-auto">
+    <div className="flex flex-col md:flex-row items-center gap-6 bg-gray-100 p-6 rounded-lg shadow-lg max-w-5xl mx-auto bg-slate-200 dark:bg-slate-600 my-6">
       {/* Image Section */}
       <div className="w-full md:w-1/2">
         <img
-          src={"https://picsum.photos/800/350?random=1"}
+          src={urlFor(image).url() || "https://picsum.photos/800/350?random=1"}
           alt={title}
           className="w-full h-60 object-cover rounded-lg shadow-md"
         />

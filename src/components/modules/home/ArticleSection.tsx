@@ -30,7 +30,7 @@ const articles = [
 
 export default function ArticleSection(props: any) {
   const { heading, sectionPreheading, articles } = props;
-  console.log(props);
+  // console.log(props);
   return (
     <section>
       <div className="container">

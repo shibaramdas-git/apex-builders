@@ -9,13 +9,14 @@ export default defineType({
       name: "title",
       title: "Title",
       type: "string",
-      description: "The title of the project.",
+      description: "A short and concise title of the project.",
       validation: (Rule) => Rule.required().max(100),
     }),
     defineField({
       name: "shortDescription",
       type: "text",
       title: "Short Description",
+      description: "This description will be displayed on every project card.",
       rows: 2,
     }),
     defineField({
@@ -31,33 +32,44 @@ export default defineType({
       type: "image",
       options: { hotspot: true },
     }),
+    // defineField({
+    //   name: "images",
+    //   title: "Project Images",
+    //   type: "array",
+    //   of: [
+    //     {
+    //       type: "image",
+    //       options: { hotspot: true },
+    //       fields: [
+    //         {
+    //           name: "alt",
+    //           type: "string",
+    //           title: "Alternative Text",
+    //           description: "Description of the image for accessibility.",
+    //         },
+    //       ],
+    //     },
+    //   ],
+    //   description: "Upload project-related images.",
+    //   validation: (Rule) => Rule.required().min(1),
+    // }),
     defineField({
-      name: "images",
-      title: "Project Images",
+      name: "blocks",
       type: "array",
+      title: "Page Blocks",
       of: [
-        {
-          type: "image",
-          options: { hotspot: true },
-          fields: [
-            {
-              name: "alt",
-              type: "string",
-              title: "Alternative Text",
-              description: "Description of the image for accessibility.",
-            },
-          ],
-        },
+        { type: "hero-1" },
+        { type: "richText" },
+        { type: "gallery" },
+        { type: "cta-1" },
+        { type: "faqsSection" },
+        { type: "heroSlider" },
+        { type: "about-1" },
+        { type: "servicesSection" },
+        { type: "testimonial&Clients" },
+        { type: "projectsSection" },
+        { type: "articlesSection" },
       ],
-      description: "Upload project-related images.",
-      validation: (Rule) => Rule.required().min(1),
-    }),
-    defineField({
-      name: "content",
-      title: "Content",
-      type: "block-content",
-      description: "A detailed description of the project.",
-      validation: (Rule) => Rule.required().max(1000),
     }),
     defineField({
       name: "status",
@@ -73,6 +85,11 @@ export default defineType({
       },
       description: "The current status of the project.",
       validation: (Rule) => Rule.required(),
+    }),
+    defineField({
+      name: "seo",
+      type: "seo",
+      title: "SEO Data",
     }),
   ],
   preview: {
