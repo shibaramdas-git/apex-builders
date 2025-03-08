@@ -6,6 +6,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { urlFor } from "@/sanity/lib/image";
+import Image from "next/image";
 import { IoStarSharp } from "react-icons/io5";
 
 export default function TestimonialMulti(props: any) {
@@ -33,29 +34,31 @@ function TestimonialCard({ testimonial }: { testimonial: any }) {
   // console.log(testimonial);
 
   return (
-    <div className="bg-white rounded-lg shadow-md p-6 max-w-[350px] mx-auto h-[400px] ">
+    <div className="bg-secondary border text-secondary-foreground rounded-lg shadow-md p-6 max-w-[350px] mx-auto h-[340px] ">
       {/* Avatar */}
       <div className="flex justify-center">
-        <img
+        <Image
           src={urlFor(authorImage).url()}
           alt={author}
-          className="w-24 h-24 rounded-full border-4 border-yellow-400 object-cover"
+          height={100}
+          width={100}
+          className="w-24 h-24 rounded-full border-2 border-primary object-cover"
         />
       </div>
 
       {/* Name and Position */}
       <div className="text-center mt-4">
-        <h5 className="text-xl font-bold text-yellow">{author}</h5>
-        <p className="text-sm ">{position}</p>
+        <h5 className="text-xl font-bold text-primary">{author}</h5>
+        <p className="text-sm text-muted-foreground ">{position}</p>
       </div>
 
       {/* Message */}
-      <p className="mt-4 text-black italic text-center">"{message}"</p>
+      <p className="mt-4 italic text-center">"{message}"</p>
 
       {/* Rating */}
-      <div className="flex justify-center text-yellow mt-4">
+      <div className="flex justify-center text-primary mt-4">
         {[...Array(rating)].map((_) => (
-          <div className="text-4xl">
+          <div className="text-3xl">
             <IoStarSharp />
           </div>
         ))}

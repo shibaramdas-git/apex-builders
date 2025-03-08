@@ -12,7 +12,7 @@ export default function AboutSection(props: any) {
           {sectionHeading || "About us"}
         </h3>
         <div className="max-w-2xl mx-auto mb-6">
-          <h2 className="text-3xl lg:text-4xl mb-3">
+          <h2 className="text-3xl lg:text-4xl mb-4">
             {heading || "Lorem ipsum dolor sit amet."}
           </h2>
           <p>
@@ -20,7 +20,7 @@ export default function AboutSection(props: any) {
               "Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro placeat quas reprehenderit quo mollitia alias ea, repellendus laboriosam vero?"}
           </p>
         </div>
-        <div className="flex flex-col gap-2 lg:gap-y-4 lg:gap-x-2 md:flex-row flex-wrap md:justify-around max-w-md md:max-w-3xl mx-auto">
+        <div className="flex mt-10 flex-col gap-2 lg:gap-y-4 lg:gap-x-2 md:flex-row flex-wrap md:justify-around max-w-md md:max-w-3xl mx-auto">
           {points.length > 0 &&
             points.map((point: any) => (
               <div

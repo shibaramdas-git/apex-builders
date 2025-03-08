@@ -66,9 +66,9 @@ export default function ServiceSection(props: any) {
   const { heading, sectionPreheading } = props;
 
   return (
-    <section className="py-12">
+    <section className="py-16">
       <div className="container mx-auto">
-        <div className="text-center mb-8">
+        <div className="text-center mb-16">
           <h3 className="text-xl md:text-2xl font-normal mb-2 uppercase text-muted-foreground">
             {sectionPreheading || "OUR Services"}
           </h3>

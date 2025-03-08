@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils";
 import { urlFor } from "@/sanity/lib/image";
+import Image from "next/image";
 import Link from "next/link";
 
 export default function ProjectSection(props: any) {
@@ -7,11 +8,11 @@ export default function ProjectSection(props: any) {
   // console.log(props);
   return (
     <section>
-      <div className="container py-12">
-        <p className="text-xl md:text-2xl font-normal mb-2 text-center uppercase">
+      <div className="container py-16">
+        <p className="text-lg md:text-xl font-normal mb-2 text-center uppercase text-muted-foreground">
           {sectionPreheading || "OUR PROJECTS"}
         </p>
-        <h2 className="text-3xl lg:text-4xl mb-3 text-center">
+        <h2 className="text-3xl lg:text-4xl mb-12 text-center">
           {heading || "Lorem ipsum dolor sit amet."}
         </h2>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 items-center">
@@ -24,7 +25,9 @@ export default function ProjectSection(props: any) {
                   idx === 0 ? "md:col-span-2" : ""
                 )}
               >
-                <img
+                <Image
+                  width={1000}
+                  height={1000}
                   src={urlFor(project.thumbnailImage).url()}
                   alt="Thumbnail image"
                   className="object-cover w-full h-full absolute inset-0"
@@ -42,7 +45,7 @@ export default function ProjectSection(props: any) {
                   </p>
                   <Link
                     href={`/projects/${project.slug.current}`}
-                    className="bg-transparent px-4 py-2 text-yellow hover:bg-yellow hover:text-black font-semibold border-yellow border-[2px]"
+                    className="bg-transparent px-4 py-2 text-primary hover:bg-primary hover:text-primary-foreground font-semibold border-primary border-[2px]"
                   >
                     {"EXPLORE PROJECT"}
                   </Link>
@@ -55,50 +58,50 @@ export default function ProjectSection(props: any) {
   );
 }
 
-const projectSectionData = {
-  sectionHeading: "work of excellence",
-  heading: "OUR PROJECTS",
-  projects: [
-    {
-      id: 1,
-      title: "Modern Architecture",
-      description: "A sleek and modern design for urban living spaces.",
-      category: "Architecture",
-      imageUrl: "https://picsum.photos/seed/modern/800/600",
-      link: "#",
-      span: "md:col-span-2",
-    },
-    {
-      id: 2,
-      title: "Eco-Friendly Design",
-      description: "Sustainable homes designed for the future.",
-      category: "Sustainability",
-      imageUrl: "https://picsum.photos/seed/eco/800/600",
-      link: "#",
-    },
-    {
-      id: 3,
-      title: "Luxury Villa",
-      description: "Opulent villas crafted for premium comfort.",
-      category: "Luxury",
-      imageUrl: "https://picsum.photos/seed/luxury/800/600",
-      link: "#",
-    },
-    {
-      id: 4,
-      title: "Urban Office Spaces",
-      description: "Efficient office layouts for the modern workforce.",
-      category: "Commercial",
-      imageUrl: "https://picsum.photos/seed/office/800/600",
-      link: "#",
-    },
-    {
-      id: 5,
-      title: "Cultural Center",
-      description: "Spaces designed to celebrate local heritage.",
-      category: "Cultural",
-      imageUrl: "https://picsum.photos/seed/culture/800/600",
-      link: "#",
-    },
-  ],
-};
+// const projectSectionData = {
+//   sectionHeading: "work of excellence",
+//   heading: "OUR PROJECTS",
+//   projects: [
+//     {
+//       id: 1,
+//       title: "Modern Architecture",
+//       description: "A sleek and modern design for urban living spaces.",
+//       category: "Architecture",
+//       imageUrl: "https://picsum.photos/seed/modern/800/600",
+//       link: "#",
+//       span: "md:col-span-2",
+//     },
+//     {
+//       id: 2,
+//       title: "Eco-Friendly Design",
+//       description: "Sustainable homes designed for the future.",
+//       category: "Sustainability",
+//       imageUrl: "https://picsum.photos/seed/eco/800/600",
+//       link: "#",
+//     },
+//     {
+//       id: 3,
+//       title: "Luxury Villa",
+//       description: "Opulent villas crafted for premium comfort.",
+//       category: "Luxury",
+//       imageUrl: "https://picsum.photos/seed/luxury/800/600",
+//       link: "#",
+//     },
+//     {
+//       id: 4,
+//       title: "Urban Office Spaces",
+//       description: "Efficient office layouts for the modern workforce.",
+//       category: "Commercial",
+//       imageUrl: "https://picsum.photos/seed/office/800/600",
+//       link: "#",
+//     },
+//     {
+//       id: 5,
+//       title: "Cultural Center",
+//       description: "Spaces designed to celebrate local heritage.",
+//       category: "Cultural",
+//       imageUrl: "https://picsum.photos/seed/culture/800/600",
+//       link: "#",
+//     },
+//   ],
+// };

@@ -8,11 +8,11 @@ export default function TestimonialSection(props: any) {
   const { showTestimonial, showClients, testimonial, clients } = props;
   // console.log(props);
   return (
-    <section className="py-4">
+    <section className="py-12">
       {/* Render Testimonials */}
       {showTestimonial && testimonial?.testimonials?.length > 0 && (
-        <div className="container">
-          <h2 className="text-2xl font-bold mb-4 text-text-black text-center">
+        <div className="container mb-8">
+          <h2 className="text-2xl font-bold mb-4 text-center pb-8">
             {testimonial.heading}
           </h2>
           {testimonial.design === "design1" ? (
@@ -27,8 +27,8 @@ export default function TestimonialSection(props: any) {
 
       {/* Render Clients */}
       {showClients && clients?.clientImages?.length > 0 && (
-        <div className="container">
-          <h2 className="text-2xl font-bold mb-4 text-text-black text-center">
+        <div className="container mt-10">
+          <h2 className="text-2xl font-bold mb-8 text-text-black text-center">
             {clients.heading}
           </h2>
           {clients.design === "design1" ? (

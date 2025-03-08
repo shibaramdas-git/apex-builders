@@ -11,15 +11,15 @@ import { FaQuoteLeft } from "react-icons/fa";
 export default function TestimonialSingle(props: any) {
   const { data } = props;
   return (
-    <div className="max-w-md">
+    <div className="mx-auto w-full max-w-lg">
       <Carousel>
-        <CarouselContent className="container">
+        <CarouselContent className="w-full">
           {data.length > 0 &&
             data.map((slide: any) => {
               return (
-                <CarouselItem className="bg-red-200 p-6">
-                  <div className="h-80 flex items-center justify-center">
-                    <div className="flex h-3/4">
+                <CarouselItem className="bg-accent text-accent-foreground mx-auto">
+                  <div className="h-60 flex items-center justify-center">
+                    <div className="flex h-3/4 px-6">
                       <div>
                         <FaQuoteLeft className="text-3xl text-yellow italic" />
                       </div>
@@ -52,8 +52,8 @@ export default function TestimonialSingle(props: any) {
               );
             })}
         </CarouselContent>
-        <CarouselPrevious className="ml-[70px] rounded-sm hover:text-yellow" />
-        <CarouselNext className="mr-[70px] rounded-sm hover:text-yellow" />
+        <CarouselPrevious className="ml-[70px] rounded-sm hover:text-primary " />
+        <CarouselNext className="mr-[70px] rounded-sm hover:text-primary " />
       </Carousel>
     </div>
   );
