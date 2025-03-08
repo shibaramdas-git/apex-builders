@@ -46,33 +46,33 @@ const projects = {
 const services = {
   label: "SERVICES",
   href: "/services",
-  items: [
-    {
-      label: "CONSTRUCTION SERVICES",
-      href: "/services/interior-design",
-    },
-    {
-      label: "PRE-CONSTRUCTION SERVICES",
-      href: "/services/exterir-design",
-    },
-    {
-      label: "POST-CONSTRUCTION SERVICES",
-      href: "/services/construction-consultant",
-    },
-    {
-      label: "CONSULTATION & ADVISORY",
-      href: "/services/house-renovation",
-    },
-    {
-      label:
-        "INFRASTRUCTURE DEVELOPMENTINFRASTRUCTURE DEVELOPMENTINFRASTRUCTURE DEVELOPMENT",
-      href: "/services/house-renovation",
-    },
-    {
-      label: "CUSTOM SERVICES",
-      href: "/services/architechture-building",
-    },
-  ],
+  // items: [
+  //   {
+  //     label: "CONSTRUCTION SERVICES",
+  //     href: "/services/interior-design",
+  //   },
+  //   {
+  //     label: "PRE-CONSTRUCTION SERVICES",
+  //     href: "/services/exterir-design",
+  //   },
+  //   {
+  //     label: "POST-CONSTRUCTION SERVICES",
+  //     href: "/services/construction-consultant",
+  //   },
+  //   {
+  //     label: "CONSULTATION & ADVISORY",
+  //     href: "/services/house-renovation",
+  //   },
+  //   {
+  //     label:
+  //       "INFRASTRUCTURE DEVELOPMENTINFRASTRUCTURE DEVELOPMENTINFRASTRUCTURE DEVELOPMENT",
+  //     href: "/services/house-renovation",
+  //   },
+  //   {
+  //     label: "CUSTOM SERVICES",
+  //     href: "/services/architechture-building",
+  //   },
+  // ],
 };
 
 const articles = {

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { IoIosArrowDown } from "react-icons/io";
 import Dropdown from "./Dropdown";
 import { linksType } from "@/hooks/useNavigation";
+import { Container } from "../ui/container";
 
 export type DesktopNavProps = {
   mainMenu: linksType[];
@@ -12,9 +13,9 @@ export type DesktopNavProps = {
 export default function DesktopNav(props: DesktopNavProps) {
   const { mainMenu, className, ...others } = props;
   return (
-    <div
+    <Container
       className={clsx(
-        "container justify-between w-full text-white font-mont font-semibold relative",
+        "justify-between w-full font-mont font-semibold relative",
         className
       )}
     >
@@ -23,10 +24,7 @@ export default function DesktopNav(props: DesktopNavProps) {
         <ul className="flex items-center gap-5 lg:gap-10 flex-1">
           {mainMenu.map((menu, idx) => (
             // all horizontal links in li
-            <li
-              key={idx}
-              className="group relative hover:text-yellow uppercase py-4"
-            >
+            <li key={idx} className="group relative uppercase py-4">
               {/* Link heading */}
               {/* check if 'menu.items' exists and has items ? */}
               {menu?.items && menu.items.length > 0 ? (
@@ -51,6 +49,6 @@ export default function DesktopNav(props: DesktopNavProps) {
       <div className="py-4 hover:text-yellow uppercase">
         <Link href="/explore-site">Expolre Site</Link>
       </div>
-    </div>
+    </Container>
   );
 }

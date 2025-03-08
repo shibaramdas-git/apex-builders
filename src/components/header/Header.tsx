@@ -11,6 +11,9 @@ import { useState, useEffect } from "react";
 import MobileNav from "./MobileNav";
 import DesktopNav from "./DesktopNav";
 import useNavigation from "@/hooks/useNavigation";
+import { Container } from "../ui/container";
+import { Separator } from "../ui/separator";
+import { Button } from "../ui/button";
 
 export default function Header() {
   const [theme, setTheme] = useState("light");
@@ -38,67 +41,60 @@ export default function Header() {
   return (
     <>
       <header>
-        {/* Top header */}
-        <div className="top_bar bg-gray dark">
-          <div className="container h-[75px] md:h-[40px] flex flex-col items-center justify-center gap-2 md:flex-row md:justify-between">
-            <div className="flex items-center font-normal text-[15px] text-[#555] dark:text-slate-300">
-              <FaLocationDot className="hover:text-[#ffb600] cursor-pointer transition duration-300 ease-in-out mr-2" />
+        {/* Top Header Bar */}
+        <div className="bg-accent text-accent-foreground py-2">
+          <Container className="flex flex-col items-center gap-2 md:flex-row md:justify-between">
+            <div className="flex items-center text-sm">
+              <FaLocationDot className="text-primary mr-2" />
               <span>9051 Apex Builders Co., India</span>
             </div>
-            <div className="flex items-center gap-4 hover:cursor-pointer">
-              <Link href="#" target="_blank">
-                <FaFacebookF className="hover:text-[#ffb600] transition duration-300 ease-in-out" />
-              </Link>
-              <Link href="#" target="_blank">
-                <FaTwitter className="hover:text-[#ffb600] transition duration-300 ease-in-out" />
-              </Link>
-              <Link href="#" target="_blank">
-                <FaInstagram className="hover:text-[#ffb600] transition duration-300 ease-in-out" />
-              </Link>
-              <Link href="#" target="_blank">
-                <FaLinkedinIn className="hover:text-[#ffb600] transition duration-300 ease-in-out" />
-              </Link>
-              <button onClick={toggleTheme} className="text-2xl text-black">
+            <div className="flex items-center gap-4">
+              <SocialLinks />
+              <button
+                onClick={toggleTheme}
+                className="text-3xl hover:text-primary transition duration-300 ease-in-out"
+              >
                 {theme === "light" ? <MdDarkMode /> : <MdLightMode />}
               </button>
             </div>
-          </div>
+          </Container>
         </div>
-        {/* Mid header */}
-        <div className="container flex flex-col items-center justify-center lg:flex-row lg:justify-between gap-4 py-6">
-          <div className="font-mont text-4xl  text-center font-bold lg:w-[200px]">
-            <span className="text-yellow text-3xl">//#//</span> Apex Builders
-          </div>
-          <div className="flex flex-wrap items-center justify-center gap-2 max-w-[350px] md:max-w-full md:w-full lg:w-auto text-center ">
-            <div className="w-[130px] md:w-[150px] md:border-e">
-              <p>Call us</p>
-              <a href="tel:9409539265" className="font-semibold">
-                (+9) 847-291-2546
-              </a>
-            </div>
-            <div className="w-[130px] md:w-[150px] md:border-e  ">
-              <p>Email us</p>
-              <a href="mailto:example@gmail.com" className="font-semibold">
-                apex@mail.com
-              </a>
-            </div>
-            <div className="w-[130px] ">
-              <p>Global Certificate</p>
-              <p className="text-black font-semibold">ISO 9001:2017</p>
-            </div>
 
-            <div className="w-[130px]">
-              <Link
-                href="/quote"
-                className="bg-yellow p-[10px] text-white text-nowrap w-full hover:bg-dark-gray hover:text-yellow font-semibold"
-              >
-                Get A Quote
-              </Link>
-            </div>
+        {/* Mid header */}
+        {/* Middle Header Section */}
+        <Container className="py-6 flex flex-col items-center gap-4 lg:flex-row lg:justify-between">
+          <h1 className="text-4xl font-bold text-center lg:w-[200px]">
+            <span className="text-primary">//#//</span> Apex Builders
+          </h1>
+
+          <div className="flex flex-wrap items-center justify-center gap-4 text-center">
+            <ContactInfo
+              label="Call us"
+              value="(+9) 847-291-2546"
+              href="tel:9409539265"
+            />
+            <Separator
+              orientation="vertical"
+              className="hidden md:block h-10"
+            />
+            <ContactInfo
+              label="Email us"
+              value="apex@mail.com"
+              href="mailto:example@gmail.com"
+            />
+            <Separator
+              orientation="vertical"
+              className="hidden md:block h-10"
+            />
+            <ContactInfo label="Global Certificate" value="ISO 9001:2017" />
+            <Button asChild>
+              <Link href="/contact">Get A Quote</Link>
+            </Button>
           </div>
-        </div>
+        </Container>
       </header>
-      <nav className="h-[60px] bg-dark-gray sticky top-0 z-50 flex items-center">
+      {/* Navigation Bar */}
+      <nav className="h-14 bg-primary text-primary-foreground sticky -top-1 z-50 flex items-center">
         {/* Header for desktop */}
         <DesktopNav
           mainMenu={[home, company, projects, services, articles, contact]}
@@ -111,5 +107,46 @@ export default function Header() {
         />
       </nav>
     </>
+  );
+}
+
+function SocialLinks() {
+  return (
+    <>
+      <Link href="#" aria-label="Facebook">
+        <FaFacebookF className="hover:text-primary transition" />
+      </Link>
+      <Link href="#" aria-label="Twitter">
+        <FaTwitter className="hover:text-primary transition" />
+      </Link>
+      <Link href="#" aria-label="Instagram">
+        <FaInstagram className="hover:text-primary transition" />
+      </Link>
+      <Link href="#" aria-label="LinkedIn">
+        <FaLinkedinIn className="hover:text-primary transition" />
+      </Link>
+    </>
+  );
+}
+function ContactInfo({
+  label,
+  value,
+  href,
+}: {
+  label: string;
+  value: string;
+  href?: string;
+}) {
+  return (
+    <div className="text-center">
+      <p className="text-muted-foreground">{label}</p>
+      {href ? (
+        <a href={href} className="font-semibold hover:underline">
+          {value}
+        </a>
+      ) : (
+        <p className="font-semibold">{value}</p>
+      )}
+    </div>
   );
 }

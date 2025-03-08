@@ -27,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${openSans.variable} ${montSerrat.variable} antialiased bg-bgcolor text-textcolor flex flex-col min-h-screen`}
+        className={`${openSans.variable} ${montSerrat.variable} antialiased bg-background text-foreground flex flex-col min-h-screen`}
       >
         <Header />
         <main className="flex-grow">{children}</main>

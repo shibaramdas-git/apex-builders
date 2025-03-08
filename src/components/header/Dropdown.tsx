@@ -12,7 +12,7 @@ export default function Dropdown(props: DropdownProps) {
   return (
     <ul
       className={clsx(
-        "opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto group-focus-within:opacity-100 group-focus-within:pointer-events-auto w-fit min-w-[180px] max-w-[300px] focus:ring-1 flex-col absolute top-full bg-white px-6 text-black text-xs border-t-2 border-yellow group-hover:flex group-focus-within:flex transition-opacity duration-300 shadow-2xl",
+        "opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto group-focus-within:opacity-100 group-focus-within:pointer-events-auto w-fit min-w-[180px] max-w-[300px] focus:ring-1 flex-col absolute top-full bg-card text-card-foreground px-6 text-xs border-t-2 border-primary group-hover:flex group-focus-within:flex transition-opacity duration-300 shadow-2xl",
         className
       )}
     >
@@ -21,7 +21,7 @@ export default function Dropdown(props: DropdownProps) {
           <Link
             href={subItem.href}
             className={clsx(
-              "block py-4 border-b border-zinc-300 hover:text-yellow overflow-x-hidden",
+              "block py-4 border-b hover:text-primary overflow-x-hidden",
               subIdx == data.length - 1 && "border-b-0"
             )}
           >
