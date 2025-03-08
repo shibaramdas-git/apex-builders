@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Carousel,
   CarouselContent,
@@ -5,11 +7,13 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import { Button } from "@/components/ui/button";
 import { urlFor } from "@/sanity/lib/image";
-import { link } from "@/types/type";
 import Link from "next/link";
+import { link } from "@/types/type";
+import { Badge } from "@/components/ui/badge";
 
-export type HeroSliderProps = Sanity.Block<"heroSlider"> & {
+export type HeroSliderProps = {
   autoplay: boolean;
   interval: number;
   cta: {
@@ -21,86 +25,102 @@ export type HeroSliderProps = Sanity.Block<"heroSlider"> & {
     button2?: link;
     description?: string;
     heading: string;
-    image?: Sanity.Image;
+    image?: any;
     preheading?: string;
     _key?: string;
   }[];
 };
 
-export default function HeroSlider(props: HeroSliderProps) {
-  const { autoplay, interval, slides, cta, ...otherData } = props;
-
+export default function HeroSlider({
+  autoplay,
+  interval,
+  slides,
+  cta,
+}: HeroSliderProps) {
   return (
-    <div>
+    <section className="relative w-full">
       <Carousel>
         <CarouselContent>
-          {slides.length > 0 &&
-            slides.map((slide, idx) => {
-              return (
-                <CarouselItem key={idx} className="pl-0">
-                  <div className="relative">
-                    <div className="h-[60vh] lg:h-[90vh]">
-                      <img
-                        src={slide.image && urlFor(slide.image).url()}
-                        alt={slide.heading}
-                        className="w-full h-full object-cover object-center"
-                      />
-                    </div>
-                    <div className="absolute inset-0 bg-black/75"></div>
-                    <div className="absolute inset-0 flex items-center justify-center text-white max-w-3xl mx-auto">
-                      <div className="text-center">
-                        <p className="text-white text-lg mb-2 md:mb-6 md:text-2xl">
-                          {slide.preheading || "20 YEARS OF EXCELLENCE IN"}
-                        </p>
-                        <h1 className="text-3xl font-bold text-white lg:text-5xl mb-4">
-                          {slide.heading || "CONSTRUCTION INDUSTRY"}
-                        </h1>
-                        <p className="text-sm mt-2 text-white md:text-lg mb-8">
-                          {slide.description ||
-                            "Your subtitle or additional content."}
-                        </p>
-                        <div className="mt-4 flex gap-4 justify-center">
-                          {slide.button1 && (
-                            <Link
-                              href={slide?.button1?.href || "#"}
-                              className="bg-yellow px-4 py-2 text-white hover:bg-dark-gray hover:text-yellow font-semibold"
-                            >
-                              {slide?.button1?.label || "Our Services"}
-                            </Link>
-                          )}
-                          {slide.button2 && (
-                            <Link
-                              href={slide?.button2?.href || "#"}
-                              className="bg-transparent px-4 py-2 text-white hover:bg-black hover:text-yellow font-semibold border-yellow border-2 "
-                            >
-                              {slide?.button2?.label || "Contact Now"}
-                            </Link>
-                          )}
-                        </div>
-                      </div>
+          {slides.map((slide, idx) => (
+            <CarouselItem key={idx} className="pl-0">
+              <div className="relative">
+                {/* Image */}
+                <div className="aspect-[16/9] md:aspect-[21/9]">
+                  <img
+                    src={slide.image && urlFor(slide.image).url()}
+                    alt={slide.heading}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-black/70"></div>
+
+                {/* Content */}
+                <div className="absolute inset-0 flex items-center justify-center text-white px-6">
+                  <div className="text-center space-y-4 max-w-3xl">
+                    {slide.preheading && (
+                      <span className="bg-yellow text-white px-3 py-1 rounded-md text-sm">
+                        {slide.preheading}
+                      </span>
+                    )}
+
+                    <h1 className="text-3xl md:text-5xl font-bold">
+                      {slide.heading}
+                    </h1>
+
+                    <p className="text-base md:text-lg text-white/80">
+                      {slide.description ||
+                        "Your subtitle or additional content."}
+                    </p>
+
+                    {/* Buttons */}
+                    <div className="flex gap-4 justify-center mt-4">
+                      {slide.button1 && (
+                        <Button asChild>
+                          <Link href={slide.button1.href || "#"}>
+                            {slide.button1.label || "Our Services"}
+                          </Link>
+                        </Button>
+                      )}
+                      {slide.button2 && (
+                        <Button
+                          asChild
+                          variant="outline"
+                          className="border-primary bg-transparent hover:bg-black hover:text-white"
+                        >
+                          <Link href={slide.button2.href || "#"}>
+                            {slide.button2.label || "Contact Now"}
+                          </Link>
+                        </Button>
+                      )}
                     </div>
                   </div>
-                </CarouselItem>
-              );
-            })}
+                </div>
+              </div>
+            </CarouselItem>
+          ))}
         </CarouselContent>
-        <CarouselPrevious className="bg-black/50 text-white rounded-none hover:bg-yellow translate-x-16 border-none" />
-        <CarouselNext className="bg-black/50 text-white rounded-none hover:bg-yellow -translate-x-16 border-none" />
+
+        {/* Navigation Buttons */}
+        <CarouselPrevious className="bg-black/50 text-white rounded-none hover:bg-primary hover:text-primary-foreground translate-x-16 border-none" />
+        <CarouselNext className="bg-black/50 text-white rounded-none hover:bg-primary hover:text-primary-foreground -translate-x-16 border-none" />
       </Carousel>
+
+      {/* CTA Section */}
       {cta && (
-        <div className="container bg-yellow p-6 md:p-8 flex gap-4 flex-col justify-center items-center md:flex-row md:justify-between -translate-y-[40px]">
-          <p className="uppercase font-semibold text-lg text-black font-mont">
-            {cta.text || "We understand your needs of constructions."}
+        <div className="container bg-primary p-6 md:p-8 flex flex-col md:flex-row justify-between items-center -translate-y-10">
+          <p className="uppercase font-semibold text-lg text-primary-foreground">
+            {cta.text || "We understand your needs."}
           </p>
 
-          <Link
-            href={cta.button.href || "#"}
-            className="bg-black px-4 py-3 text-white text-nowrap hover:bg-dark-gray hover:text-yellow font-semibold"
-          >
-            {cta.button.label || "Contact Now"}
-          </Link>
+          <Button asChild variant="outline">
+            <Link href={cta.button.href || "#"}>
+              {cta.button.label || "Contact Now"}
+            </Link>
+          </Button>
         </div>
       )}
-    </div>
+    </section>
   );
 }

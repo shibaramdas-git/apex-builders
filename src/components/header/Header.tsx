@@ -50,12 +50,12 @@ export default function Header() {
             </div>
             <div className="flex items-center gap-4">
               <SocialLinks />
-              <button
+              {/* <button
                 onClick={toggleTheme}
                 className="text-3xl hover:text-primary transition duration-300 ease-in-out"
               >
                 {theme === "light" ? <MdDarkMode /> : <MdLightMode />}
-              </button>
+              </button> */}
             </div>
           </Container>
         </div>
@@ -99,6 +99,8 @@ export default function Header() {
         <DesktopNav
           mainMenu={[home, company, projects, services, articles, contact]}
           className="hidden md:flex"
+          theme={theme}
+          toggleTheme={toggleTheme}
         />
         {/* Header for Mobile */}
         <MobileNav

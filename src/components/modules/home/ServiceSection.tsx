@@ -1,5 +1,8 @@
-import { urlFor } from "@/sanity/lib/image";
+import Image from "next/image";
 import Link from "next/link";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
+import { urlFor } from "@/sanity/lib/image";
 
 export type ServiceSectionProps = {};
 
@@ -66,9 +69,9 @@ export default function ServiceSection(props: any) {
     <section className="py-12">
       <div className="container mx-auto">
         <div className="text-center mb-8">
-          <p className="text-lg md:text-xl font-light uppercase text-gray-600">
+          <h3 className="text-xl md:text-2xl font-normal mb-2 uppercase text-muted-foreground">
             {sectionPreheading || "OUR Services"}
-          </p>
+          </h3>
           <h2 className="text-3xl lg:text-4xl font-bold">
             {heading || "Services"}
           </h2>
@@ -86,25 +89,27 @@ function ServiceItem({ service, idx }: { service: any; idx: number }) {
   return (
     <div className="flex gap-4 items-start">
       {/* Icon */}
-      <div className="flex justify-center items-center p-3 bg-yellow rounded-lg shadow-md">
-        <img
+      <div className="flex justify-center items-center p-3 rounded-lg shadow-sm bg-primary dark:bg-accent-foreground">
+        <Image
           src={urlFor(service.icon).url()}
           alt={`${service.title} icon`}
           className="w-10 h-auto"
+          width={40}
+          height={40}
         />
       </div>
 
       {/* Content */}
       <div>
-        <h5 className="text-lg font-semibold">
+        <h5 className="text-lg font-semibold text-foreground">
           <Link
             href={`/services/${service.slug.current}`}
-            className="hover:text-yellow-500"
+            className="hover:text-primary"
           >
             {service.title}
           </Link>
         </h5>
-        <p className="text-gray-600">{service.shortDescription}</p>
+        <p className="text-muted-foreground">{service.shortDescription}</p>
       </div>
     </div>
   );
@@ -117,7 +122,7 @@ function ServiceDesign1(props: any) {
   const { image, services } = props;
 
   return (
-    <div className="flex flex-col lg:flex-row gap-6 items-center">
+    <div className="flex flex-col lg:flex-row gap-6 items-center justify-stretch">
       {/* Left Services */}
       <div className="flex flex-col gap-6">
         {services
@@ -129,11 +134,13 @@ function ServiceDesign1(props: any) {
 
       {/* Center Image */}
       {image && (
-        <div className="w-full lg:w-1/3 h-64 bg-gray-200">
-          <img
+        <div className="w-full lg:w-1/3 h-full lg:h-[350px]">
+          <Image
             src={urlFor(image).url()}
             alt="Service Showcase"
-            className="w-full h-full object-cover rounded-lg shadow-md"
+            width={800}
+            height={1200}
+            className="h-full w-full object-cover bg-position-center"
           />
         </div>
       )}
@@ -168,21 +175,23 @@ function ServiceDesign2(props: any) {
 
 function ServiceCard({ service }: { service: any }) {
   return (
-    <div className="group bg-slate-100 dark:bg-black/60 rounded-lg shadow-lg p-6 hover:shadow-2xl transition-shadow duration-300">
+    <div className="group bg-card text-card-foreground rounded-lg border shadow-md p-6 hover:shadow-xl transition-shadow duration-300">
       {/* Icon */}
-      <div className="flex justify-center items-center w-16 h-14 mx-auto border-b-2 border-yellow mb-2">
-        <img
+      <div className="flex justify-center items-center w-16 h-14 mx-auto border-b-2 border-primary mb-2">
+        <Image
           src={urlFor(service.icon).url()}
           alt={`${service.title} icon`}
-          className="w-10 p-1 rounded-md h-auto border-b-2 border-yellow bg-slate-100"
+          width={40}
+          height={40}
+          className="object-contain w-10 p-1 rounded-md h-auto border-b-2 border-primary dark:bg-accent-foreground "
         />
       </div>
 
       {/* Content */}
-      <h5 className="text-center text-lg md:text-lg font-bold mb-2 text-text-black group-hover:text-yellow">
+      <h5 className="text-center text-lg md:text-lg font-bold mb-2 text-foreground group-hover:text-primary">
         <Link href={`/services/${service.slug.current}`}>{service.title}</Link>
       </h5>
-      <p className="text-center text-sm text-gray-600">
+      <p className="text-center text-sm text-muted-foreground">
         {service.shortDescription}
       </p>
     </div>

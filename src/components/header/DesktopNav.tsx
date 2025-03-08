@@ -4,14 +4,17 @@ import { IoIosArrowDown } from "react-icons/io";
 import Dropdown from "./Dropdown";
 import { linksType } from "@/hooks/useNavigation";
 import { Container } from "../ui/container";
+import { MdDarkMode, MdLightMode } from "react-icons/md";
 
 export type DesktopNavProps = {
   mainMenu: linksType[];
   className: string;
+  theme: string;
+  toggleTheme: () => void;
 };
 
 export default function DesktopNav(props: DesktopNavProps) {
-  const { mainMenu, className, ...others } = props;
+  const { mainMenu, className, theme, toggleTheme, ...others } = props;
   return (
     <Container
       className={clsx(
@@ -46,8 +49,14 @@ export default function DesktopNav(props: DesktopNavProps) {
         </ul>
       )}
 
-      <div className="py-4 hover:text-yellow uppercase">
+      <div className="py-4 hover:text-yellow uppercase inline-flex items-center gap-2">
         <Link href="/explore-site">Expolre Site</Link>
+        <button
+          onClick={toggleTheme}
+          className="text-3xl transition duration-300 ease-in-out"
+        >
+          {theme === "light" ? <MdDarkMode /> : <MdLightMode />}
+        </button>
       </div>
     </Container>
   );

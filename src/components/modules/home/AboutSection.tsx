@@ -1,3 +1,4 @@
+import { Container } from "@/components/ui/container";
 import { urlFor } from "@/sanity/lib/image";
 
 export type AboutSectionProps = {};
@@ -6,8 +7,8 @@ export default function AboutSection(props: any) {
   const { sectionHeading, heading, points, statsData, description } = props;
   return (
     <div>
-      <div className="container text-center py-10">
-        <h3 className="text-xl md:text-2xl font-normal mb-2">
+      <Container className="text-center py-10">
+        <h3 className="text-xl md:text-2xl font-normal mb-2 text-muted-foreground">
           {sectionHeading || "About us"}
         </h3>
         <div className="max-w-2xl mx-auto mb-6">
@@ -26,7 +27,7 @@ export default function AboutSection(props: any) {
                 key={point._key}
                 className="flex items-center gap-3 md:w-[48%]"
               >
-                <div className="flex justify-center items-center bg-yellow rounded-full w-12 h-12">
+                <div className="flex justify-center items-center bg-primary rounded-full w-12 h-12">
                   <img
                     src={urlFor(point.icon).url()}
                     alt="icons"
@@ -35,17 +36,17 @@ export default function AboutSection(props: any) {
                     height={24}
                   />
                 </div>
-                <p className="text-xl text-black font-semibold">{point.text}</p>
+                <p className="text-xl font-semibold">{point.text}</p>
               </div>
             ))}
         </div>
-      </div>
-      <div className="bg-dark-gray">
+      </Container>
+      <div className="bg-secondary">
         <div className="container py-6 md:py-14 flex flex-col items-center sm:flex-row flex-wrap sm:justify-around gap-2">
           {statsData.length > 0 &&
             statsData.map((stats: any) => (
               <div key={stats._key} className="text-center py-4 w-[200px]">
-                <div className="flex justify-center items-center bg-yellow w-14 h-14 rotate-45 mx-auto mb-6 rounded-lg">
+                <div className="flex justify-center items-center bg-primary w-14 h-14 rotate-45 mx-auto mb-6 rounded-lg">
                   <img
                     src={urlFor(stats.icon).url()}
                     alt="icons"
@@ -54,10 +55,10 @@ export default function AboutSection(props: any) {
                     height={35}
                   />
                 </div>
-                <div className="text-5xl text-white font-bold mb-2">
-                  {stats.value} +
-                </div>
-                <p className="uppercase text-yellow font-bold">{stats.label}</p>
+                <div className="text-5xl font-bold mb-2">{stats.value} +</div>
+                <p className="uppercase text-primary font-bold">
+                  {stats.label}
+                </p>
               </div>
             ))}
         </div>
