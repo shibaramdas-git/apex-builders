@@ -52,7 +52,8 @@ export default function ArticleCard({ article }: { article: IArticle }) {
           <Image
             src={urlFor(article?.thumbnailImage?.asset).url() || ""}
             alt={article.thumbnailImage?.alt || "Article Image"}
-            fill
+            width={800}
+            height={600}
             className="object-cover transition duration-300 group-hover:scale-105"
           />
         </div>

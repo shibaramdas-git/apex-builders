@@ -3,29 +3,34 @@ import { PortableText, PortableTextProps } from "@portabletext/react";
 import { FaQuoteLeft } from "react-icons/fa6";
 // import Image from "next/image";
 import Link from "next/link";
+import Image from "next/image";
 
 const portableTextComponents: PortableTextProps["components"] = {
   types: {
     image: ({ value }) => {
       return (
-        <img
-          src={urlFor(value.asset).url()}
-          alt={value.alt || "Image"}
-          className="max-w-xl mx-auto h-auto rounded-md shadow-sm mb-6 m-2"
-        />
+        <div className="w-full max-w-xl mx-auto">
+          <Image
+            src={urlFor(value.asset).url()}
+            alt={value.alt || "Image"}
+            width={800}
+            height={600}
+            className="h-auto rounded-md shadow-sm mb-6 m-2 object-cover"
+          />
+        </div>
       );
     },
   },
   block: {
-    normal: ({ children }) => <p className="mb-4 text-black">{children}</p>,
+    normal: ({ children }) => <p className="mb-4">{children}</p>,
     h1: ({ children }) => <h1 className="my-4 normal-case">{children}</h1>,
     h2: ({ children }) => <h2 className="mb-4 normal-case">{children}</h2>,
     h3: ({ children }) => <h3 className="mb-4 normal-case">{children}</h3>,
     h4: ({ children }) => <h4 className="mb-4 normal-case">{children}</h4>,
     h5: ({ children }) => <h5 className="mb-4 normal-case">{children}</h5>,
     blockquote: ({ children }) => (
-      <blockquote className="mb-4 text-black font-medium bg-neutral-100 inline-start- border-l-4 border-yellow ">
-        <FaQuoteLeft className="text-4xl text-neutral-400 ml-1" />
+      <blockquote className="mb-4 text-accent-foreground font-medium bg-accent inline-start- border-l-4 border-primary ">
+        <FaQuoteLeft className="text-4xl text-accent-foreground ml-1" />
         <span className="my-auto ml-8 inline-block pb-8 pr-4">{children} </span>
       </blockquote>
     ),
@@ -70,7 +75,7 @@ const portableTextComponents: PortableTextProps["components"] = {
 
 const PortableTextRenderer = (props: any) => {
   return (
-    <section className="container py-8">
+    <section className="container py-8 space-y-4">
       <PortableText value={props.content} components={portableTextComponents} />
     </section>
   );

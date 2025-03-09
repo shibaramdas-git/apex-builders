@@ -26,7 +26,8 @@ export default function ProjectCard({ project }: { project: IProject }) {
         <Image
           src={urlFor(project.thumbnailImage).url()}
           alt={project.title}
-          fill
+          width={800}
+          height={600}
           className="object-cover transition-transform group-hover:scale-105"
         />
       </div>
