@@ -8,7 +8,6 @@ import ArticleCard, {
 
 export default async function Services() {
   const articles = await fetchAllArticles();
-  console.log(articles);
   if (!articles) {
     return <Custom404 />;
   }

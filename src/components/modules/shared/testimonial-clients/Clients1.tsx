@@ -1,5 +1,6 @@
 import { urlFor } from "@/sanity/lib/image";
 import clsx from "clsx";
+import Image from "next/image";
 export type Clients1Props = {
   className?: string;
 };
@@ -22,9 +23,11 @@ export default function Clients1({
             <>
               {clients.map((client: any) => (
                 <div className="w-[130px]" key={client._key}>
-                  <img
+                  <Image
                     src={urlFor(client).url() || "https://placehold.co/50x100"}
                     alt={client._type || "client"}
+                    width={130}
+                    height={80}
                     className="w-full h-[80px] border p-2 border-muted-foreground object-cover"
                   />
                 </div>
@@ -40,7 +43,9 @@ export default function Clients1({
             <>
               {clients.map((client: any) => (
                 <div className="w-[130px]" key={client._key}>
-                  <img
+                  <Image
+                    width={130}
+                    height={80}
                     src={urlFor(client).url() || "https://placehold.co/50x100"}
                     alt={client._type || "client"}
                     className="w-full h-[80px] border p-2 border-muted-foreground object-cover"

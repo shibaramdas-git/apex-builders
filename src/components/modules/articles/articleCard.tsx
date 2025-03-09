@@ -48,13 +48,13 @@ export default function ArticleCard({ article }: { article: IArticle }) {
     <Card className="group relative overflow-hidden rounded-lg border shadow-md transition hover:shadow-lg">
       {/* Thumbnail Image */}
       <Link href={`/articles/${article.slug.current}`} className="block">
-        <div className="relative h-48 w-full">
+        <div className="relative h-48 w-full overflow-hidden">
           <Image
             src={urlFor(article?.thumbnailImage?.asset).url() || ""}
             alt={article.thumbnailImage?.alt || "Article Image"}
-            width={800}
-            height={600}
-            className="object-cover transition duration-300 group-hover:scale-105"
+            width={350}
+            height={200}
+            className="object-cover h-full w-full transition duration-300 group-hover:scale-105"
           />
         </div>
       </Link>

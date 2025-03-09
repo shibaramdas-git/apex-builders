@@ -64,7 +64,8 @@ export default function Header() {
         {/* Middle Header Section */}
         <Container className="py-6 flex flex-col items-center gap-4 lg:flex-row lg:justify-between">
           <h1 className="text-4xl font-bold text-center lg:w-[200px]">
-            <span className="text-primary">//#//</span> Apex Builders
+            <span className="text-primary">&#47;&#47;#&#47;&#47;</span> Apex
+            Builders
           </h1>
 
           <div className="flex flex-wrap items-center justify-center gap-4 text-center">

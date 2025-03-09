@@ -1,6 +1,5 @@
 import Banner from "@/components/Banner";
-import Blocks from "@/components/Blocks";
-import fetchSanityPageBySlug, { fetchAllServices } from "../actions";
+import { fetchAllServices } from "../actions";
 import Custom404 from "@/components/404";
 import { Container } from "@/components/ui/container";
 import { urlFor } from "@/sanity/lib/image";
@@ -12,8 +11,6 @@ import { Separator } from "@/components/ui/separator";
 
 export default async function Services() {
   const page = await fetchAllServices();
-  console.log(page);
-
   if (!page) {
     return <Custom404 />;
   }
@@ -36,7 +33,6 @@ export default async function Services() {
                     index % 2 === 0 ? "bg-muted" : ""
                   )}
                 >
-                  {/* Image Section */}
                   <div className="flex-shrink-0 bg-primary self-start">
                     <Image
                       src={urlFor(service.icon).url()}
@@ -47,7 +43,6 @@ export default async function Services() {
                     />
                   </div>
 
-                  {/* Content Section */}
                   <CardContent className="space-y-3">
                     <h3 className="text-2xl font-bold">{service.title}</h3>
                     <Separator className="bg-black w-3/4" />

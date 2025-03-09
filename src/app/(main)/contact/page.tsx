@@ -39,7 +39,7 @@ export default function ContactPage() {
   });
 
   const onSubmit = (data: ContactFormValues) => {
-    console.log("Form Submitted:", data);
+    // console.log("Form Submitted:", data);
     alert("Form submitted successfully!");
   };
 

@@ -1,7 +1,8 @@
 import { Container } from "@/components/ui/container";
 import { urlFor } from "@/sanity/lib/image";
+import Image from "next/image";
 
-export type AboutSectionProps = {};
+// export type AboutSectionProps = {};
 
 export default function AboutSection(props: any) {
   const { sectionHeading, heading, points, statsData, description } = props;
@@ -28,7 +29,7 @@ export default function AboutSection(props: any) {
                 className="flex items-center gap-3 md:w-[48%]"
               >
                 <div className="flex justify-center items-center bg-primary rounded-full w-12 h-12">
-                  <img
+                  <Image
                     src={urlFor(point.icon).url()}
                     alt="icons"
                     className=""
@@ -47,7 +48,7 @@ export default function AboutSection(props: any) {
             statsData.map((stats: any) => (
               <div key={stats._key} className="text-center py-4 w-[200px]">
                 <div className="flex justify-center items-center bg-primary w-14 h-14 rotate-45 mx-auto mb-6 rounded-lg">
-                  <img
+                  <Image
                     src={urlFor(stats.icon).url()}
                     alt="icons"
                     className="-rotate-45"

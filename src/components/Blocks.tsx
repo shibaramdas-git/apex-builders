@@ -1,7 +1,6 @@
 import Hero from "./Hero";
 import Faqs from "./Faqs";
 import Cta from "./Cta";
-import RichText from "./RichText";
 import HeroSlider from "./modules/home/HeroSlider";
 import AboutSection from "./modules/home/AboutSection";
 import ServiceSection from "./modules/home/ServiceSection";
@@ -20,7 +19,6 @@ const COMPONENT_MAP: { [key: string]: React.ComponentType<any> } = {
   articlesSection: ArticleSection,
   richText: PortableTextRenderer,
   faqsSection: Faqs,
-  // richText: RichText,
   "cta-1": Cta,
 };
 

@@ -17,7 +17,10 @@ export default function TestimonialMulti(props: any) {
         {data.length > 0 &&
           data.map((testimonial: any) => {
             return (
-              <CarouselItem className="md:basis-1/2 lg:basis-1/3 pl-2">
+              <CarouselItem
+                className="md:basis-1/2 lg:basis-1/3 pl-2"
+                key={testimonial._key}
+              >
                 <TestimonialCard testimonial={testimonial} />
               </CarouselItem>
             );
@@ -57,8 +60,8 @@ function TestimonialCard({ testimonial }: { testimonial: any }) {
 
       {/* Rating */}
       <div className="flex justify-center text-primary mt-4">
-        {[...Array(rating)].map((_) => (
-          <div className="text-3xl">
+        {[...Array(rating)].map((_, index: number) => (
+          <div className="text-3xl" key={index}>
             <IoStarSharp />
           </div>
         ))}

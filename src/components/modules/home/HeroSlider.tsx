@@ -12,6 +12,7 @@ import { urlFor } from "@/sanity/lib/image";
 import Link from "next/link";
 import { link } from "@/types/type";
 import { Badge } from "@/components/ui/badge";
+import Image from "next/image";
 
 export type HeroSliderProps = {
   autoplay: boolean;
@@ -44,9 +45,10 @@ export default function HeroSlider({
           {slides.map((slide, idx) => (
             <CarouselItem key={idx} className="pl-0">
               <div className="relative">
-                {/* Image */}
                 <div className="aspect-[16/9] md:aspect-[21/9]">
-                  <img
+                  <Image
+                    width={800}
+                    height={600}
                     src={slide.image && urlFor(slide.image).url()}
                     alt={slide.heading}
                     className="w-full h-full object-cover"

@@ -4,7 +4,7 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { urlFor } from "@/sanity/lib/image";
 
-export type ServiceSectionProps = {};
+// export type ServiceSectionProps = {};
 
 // const data = {
 //   sectionPreheading: "What We Do",

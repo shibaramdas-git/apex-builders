@@ -6,6 +6,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { urlFor } from "@/sanity/lib/image";
+import Image from "next/image";
 import { FaQuoteLeft } from "react-icons/fa";
 
 export default function TestimonialSingle(props: any) {
@@ -17,7 +18,10 @@ export default function TestimonialSingle(props: any) {
           {data.length > 0 &&
             data.map((slide: any) => {
               return (
-                <CarouselItem className="bg-accent text-accent-foreground mx-auto">
+                <CarouselItem
+                  className="bg-accent text-accent-foreground mx-auto"
+                  key={slide._key}
+                >
                   <div className="h-60 flex items-center justify-center">
                     <div className="flex h-3/4 px-6">
                       <div>
@@ -27,7 +31,9 @@ export default function TestimonialSingle(props: any) {
                         <p>{slide.message || "Lorem ipsum dolor sit amet."}</p>
                         <div className="flex justify-between py-2">
                           <div className="flex gap-3 items-center ">
-                            <img
+                            <Image
+                              width={70}
+                              height={70}
                               src={
                                 urlFor(slide.authorImage).url() ||
                                 "https://picsum.photos/seed/person2/400/400"

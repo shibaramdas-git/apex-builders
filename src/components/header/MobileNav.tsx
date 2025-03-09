@@ -19,7 +19,7 @@ export default function MobileNav(props: MobileNavProps) {
       className={clsx("flex items-center justify-between w-full", className)}
     >
       <p className="text-xl font-bold">
-        <span className="font-normal">//#// </span>Apex Builders
+        <span className="font-normal">&#47;&#47;#&#47;&#47;</span>Apex Builders
       </p>
       <div className="dropdown relative group py-4">
         <button className="hover:text-yellow uppercase font-semibold">
