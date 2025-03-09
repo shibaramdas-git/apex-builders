@@ -1,196 +1,151 @@
 "use client";
-import { useForm, SubmitHandler } from "react-hook-form";
 
-type FormValues = {
-  name: string;
-  email: string;
-  phone: string;
-  projectType: string;
-  message: string;
-  file?: FileList;
-  contactTime: string;
-};
+import { useForm } from "react-hook-form";
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { Label } from "@/components/ui/label";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { Textarea } from "@/components/ui/textarea";
+import { Card, CardContent } from "@/components/ui/card";
+import {
+  Select,
+  SelectTrigger,
+  SelectValue,
+  SelectContent,
+  SelectItem,
+} from "@/components/ui/select";
 
-const ContactPage = () => {
+const contactSchema = z.object({
+  name: z.string().min(3, "Name must be at least 3 characters"),
+  email: z.string().email("Invalid email format"),
+  phone: z.string().optional(),
+  projectType: z.string().min(1, "Project type is required"),
+  message: z.string().min(10, "Message should be at least 10 characters"),
+  file: z.any().optional(),
+  contactTime: z.string().min(1, "Please select a contact time"),
+});
+
+type ContactFormValues = z.infer<typeof contactSchema>;
+
+export default function ContactPage() {
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
-  } = useForm<FormValues>();
+    setValue,
+  } = useForm<ContactFormValues>({
+    resolver: zodResolver(contactSchema),
+  });
 
-  const onSubmit: SubmitHandler<FormValues> = (data) => {
-    console.log("Form Data:", data);
+  const onSubmit = (data: ContactFormValues) => {
+    console.log("Form Submitted:", data);
     alert("Form submitted successfully!");
   };
 
-  console.log(watch("name"));
-
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col items-center px-6 py-10">
-      <h1 className="text-3xl font-bold text-gray-800 mb-6">Get in Touch</h1>
-      <p className="text-center text-gray-600 mb-10 max-w-xl">
-        Contact us for inquiries, quotes, or further details about our services.
-        We’re here to help bring your vision to life.
-      </p>
+    <div className="min-h-screen flex flex-col items-center justify-center py-10 px-4">
+      <Card className="w-full max-w-2xl shadow-lg">
+        <CardContent className="p-6">
+          <h2 className="text-2xl font-bold text-center mb-4">Get in Touch</h2>
+          <p className="text-center text-muted-foreground mb-6">
+            Fill out the form below to connect with us!
+          </p>
 
-      <form
-        onSubmit={handleSubmit(onSubmit)}
-        className="w-full max-w-2xl bg-white shadow-md rounded-lg p-6"
-      >
-        <div className="mb-4">
-          <label
-            htmlFor="name"
-            className="block text-gray-700 font-semibold mb-2"
-          >
-            Full Name
-          </label>
-          <input
-            id="name"
-            type="text"
-            className={`w-full p-3 border rounded-lg ${errors.name ? "border-red-500" : "border-gray-300"}`}
-            {...register("name", { required: "Name is required." })}
-          />
-          {errors.name && (
-            <p className="text-red-500 text-sm mt-1">{errors.name.message}</p>
-          )}
-        </div>
+          <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
+            <div>
+              <Label htmlFor="name">Full Name</Label>
+              <Input id="name" {...register("name")} placeholder="John Doe" />
+              {errors.name && (
+                <p className="text-red-500 text-xs">{errors.name.message}</p>
+              )}
+            </div>
 
-        <div className="mb-4">
-          <label
-            htmlFor="email"
-            className="block text-gray-700 font-semibold mb-2"
-          >
-            Email Address
-          </label>
-          <input
-            id="email"
-            type="email"
-            className={`w-full p-3 border rounded-lg ${errors.email ? "border-red-500" : "border-gray-300"}`}
-            {...register("email", {
-              required: "Email is required.",
-              pattern: /^\S+@\S+$/i,
-            })}
-          />
-          {errors.email && (
-            <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>
-          )}
-        </div>
+            <div>
+              <Label htmlFor="email">Email Address</Label>
+              <Input
+                id="email"
+                {...register("email")}
+                placeholder="john@example.com"
+                type="email"
+              />
+              {errors.email && (
+                <p className="text-red-500 text-xs">{errors.email.message}</p>
+              )}
+            </div>
 
-        <div className="mb-4">
-          <label
-            htmlFor="phone"
-            className="block text-gray-700 font-semibold mb-2"
-          >
-            Phone Number
-          </label>
-          <input
-            id="phone"
-            type="tel"
-            className={`w-full p-3 border rounded-lg ${errors.phone ? "border-red-500" : "border-gray-300"}`}
-            {...register("phone", { required: "Phone number is required." })}
-          />
-          {errors.phone && (
-            <p className="text-red-500 text-sm mt-1">{errors.phone.message}</p>
-          )}
-        </div>
+            <div>
+              <Label htmlFor="phone">Phone (Optional)</Label>
+              <Input
+                id="phone"
+                {...register("phone")}
+                placeholder="+1 234 567 890"
+                type="tel"
+              />
+            </div>
 
-        <div className="mb-4">
-          <label
-            htmlFor="projectType"
-            className="block text-gray-700 font-semibold mb-2"
-          >
-            Project Type
-          </label>
-          <select
-            id="projectType"
-            className={`w-full p-3 border rounded-lg ${errors.projectType ? "border-red-500" : "border-gray-300"}`}
-            {...register("projectType", {
-              required: "Please select a project type.",
-            })}
-          >
-            <option value="">Select a Project Type</option>
-            <option value="Residential">Residential</option>
-            <option value="Commercial">Commercial</option>
-            <option value="Renovation">Renovation</option>
-          </select>
-          {errors.projectType && (
-            <p className="text-red-500 text-sm mt-1">
-              {errors.projectType.message}
-            </p>
-          )}
-        </div>
+            <div>
+              <Label>Project Type</Label>
+              <Select onValueChange={(value) => setValue("projectType", value)}>
+                <SelectTrigger>
+                  <SelectValue placeholder="Select a Project Type" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="Residential">Residential</SelectItem>
+                  <SelectItem value="Commercial">Commercial</SelectItem>
+                  <SelectItem value="Renovation">Renovation</SelectItem>
+                </SelectContent>
+              </Select>
+              {errors.projectType && (
+                <p className="text-red-500 text-xs">
+                  {errors.projectType.message}
+                </p>
+              )}
+            </div>
 
-        <div className="mb-4">
-          <label
-            htmlFor="message"
-            className="block text-gray-700 font-semibold mb-2"
-          >
-            Message
-          </label>
-          <textarea
-            id="message"
-            rows={4}
-            className={`w-full p-3 border rounded-lg ${errors.message ? "border-red-500" : "border-gray-300"}`}
-            {...register("message", { required: "Message is required." })}
-          />
-          {errors.message && (
-            <p className="text-red-500 text-sm mt-1">
-              {errors.message.message}
-            </p>
-          )}
-        </div>
+            <div>
+              <Label htmlFor="message">Message</Label>
+              <Textarea
+                id="message"
+                {...register("message")}
+                placeholder="Describe your project..."
+                rows={4}
+              />
+              {errors.message && (
+                <p className="text-red-500 text-xs">{errors.message.message}</p>
+              )}
+            </div>
 
-        <div className="mb-4">
-          <label
-            htmlFor="file"
-            className="block text-gray-700 font-semibold mb-2"
-          >
-            Upload Files (Optional)
-          </label>
-          <input
-            id="file"
-            type="file"
-            className="w-full"
-            {...register("file")}
-          />
-        </div>
+            <div>
+              <Label htmlFor="file">Upload File (Optional)</Label>
+              <Input id="file" type="file" {...register("file")} />
+            </div>
 
-        <div className="mb-6">
-          <label
-            htmlFor="contactTime"
-            className="block text-gray-700 font-semibold mb-2"
-          >
-            Preferred Contact Time
-          </label>
-          <select
-            id="contactTime"
-            className={`w-full p-3 border rounded-lg ${errors.contactTime ? "border-red-500" : "border-gray-300"}`}
-            {...register("contactTime", {
-              required: "Please select a preferred contact time.",
-            })}
-          >
-            <option value="">Select a Time</option>
-            <option value="Morning">Morning</option>
-            <option value="Afternoon">Afternoon</option>
-            <option value="Evening">Evening</option>
-          </select>
-          {errors.contactTime && (
-            <p className="text-red-500 text-sm mt-1">
-              {errors.contactTime.message}
-            </p>
-          )}
-        </div>
+            <div>
+              <Label>Preferred Contact Time</Label>
+              <Select onValueChange={(value) => setValue("contactTime", value)}>
+                <SelectTrigger>
+                  <SelectValue placeholder="Select a Time" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="Morning">Morning</SelectItem>
+                  <SelectItem value="Afternoon">Afternoon</SelectItem>
+                  <SelectItem value="Evening">Evening</SelectItem>
+                </SelectContent>
+              </Select>
+              {errors.contactTime && (
+                <p className="text-red-500 text-xs">
+                  {errors.contactTime.message}
+                </p>
+              )}
+            </div>
 
-        <button
-          type="submit"
-          className="w-full bg-blue-600 text-white p-3 rounded-lg font-semibold hover:bg-blue-700"
-        >
-          Submit
-        </button>
-      </form>
+            <Button type="submit" className="w-full">
+              Send Message
+            </Button>
+          </form>
+        </CardContent>
+      </Card>
     </div>
   );
-};
-
-export default ContactPage;
+}
