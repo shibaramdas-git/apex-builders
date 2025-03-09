@@ -9,7 +9,6 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { urlFor } from "@/sanity/lib/image";
-import { cn } from "@/lib/utils";
 
 export interface IProject {
   title: string;

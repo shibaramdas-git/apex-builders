@@ -83,11 +83,11 @@ export default defineType({
       ],
     }),
     defineField({
-      name: "categories",
-      title: "Categories",
-      type: "array",
+      name: "category",
+      title: "Category",
+      type: "reference",
       group: "settings",
-      of: [{ type: "reference", to: { type: "category" } }],
+      to: { type: "category" },
     }),
     defineField({
       name: "blocks",

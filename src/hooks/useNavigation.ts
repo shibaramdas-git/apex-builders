@@ -77,7 +77,7 @@ const services = {
 
 const articles = {
   label: "ARTICLES",
-  href: "/news",
+  href: "/articles",
 };
 
 const contact = {

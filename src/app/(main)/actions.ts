@@ -1,7 +1,9 @@
 import { client } from "@/sanity/lib/client";
+import { ARTICLE_QUERY } from "@/sanity/queries/article";
+import { ARTICLE_LIST_QUERY } from "@/sanity/queries/article-list";
 import { PAGE_QUERY } from "@/sanity/queries/page";
 import { PROJECT_QUERY } from "@/sanity/queries/project";
-import { PROJECT_LIST_QUERY } from "@/sanity/queries/projectList";
+import { PROJECT_LIST_QUERY } from "@/sanity/queries/project-list";
 
 export default async function fetchSanityPageBySlug({
   slug,
@@ -20,12 +22,18 @@ export async function fetchAllServices() {
   return data;
 }
 export async function fetchAllArticles() {
-  const data = await client.fetch(PROJECT_LIST_QUERY);
+  const data = await client.fetch(ARTICLE_LIST_QUERY);
   return data;
 }
 
 export async function fetchSanityProjectBySlug({ slug }: { slug: string }) {
   const data = await client.fetch(PROJECT_QUERY, { slug });
+
+  return data;
+}
+
+export async function fetchSanityArticleBySlug({ slug }: { slug: string }) {
+  const data = await client.fetch(ARTICLE_QUERY, { slug });
 
   return data;
 }
